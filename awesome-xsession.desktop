@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=XSession
+Exec=awesome
+TryExec=awesome
+Name=Awesome
+Comment=This session logs you into Awesome
+Comment[pl]=Ta sesja zaloguje Cię do Awesome
+# vi: encoding=utf-8
