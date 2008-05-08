@@ -1,4 +1,3 @@
-# $Revision $, $Date: 2008-05-08 08:20:38 $
 #
 Summary:	Awesome Window Manager
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
