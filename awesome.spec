@@ -1,14 +1,14 @@
-# $Revision $, $Date: 2008-03-15 16:08:03 $
+# $Revision $, $Date: 2008-05-08 08:20:38 $
 #
 Summary:	Awesome Window Manager
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
 Name:		awesome
-Version:	2.1
+Version:	2.3
 Release:	0.1
 License:	GPL v2
 Group:		X11/Window Managers
 Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.bz2
-# Source0-md5:	def20d92c1af0352fd027889890e5844
+# Source0-md5:	9824bd7b150c991f5bac396102a9aea7
 Source1:	%{name}-xsession.desktop
 URL:		http://awesome.naquadah.org/
 BuildRequires:	asciidoc
@@ -16,9 +16,10 @@ BuildRequires:	asciidoc
 #BuildRequires:	automake
 BuildRequires:	cairo-devel
 BuildRequires:	doxygen
+BuildRequires:	imlib2-devel
 BuildRequires:	libconfuse-devel
 BuildRequires:	libtool
-BuildRequires:	pkgconfig
+BuildRequires:	pango-devel
 BuildRequires:	pkgconfig >= 0.9.0
 BuildRequires:	sed >= 4.0
 BuildRequires:	xmlto
@@ -71,6 +72,9 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS LICENSE README STYLE awesomerc
 %attr(755,root,root) %{_bindir}/%{name}
 %attr(755,root,root) %{_bindir}/%{name}-client
+%attr(755,root,root) %{_bindir}/%{name}-menu
+%attr(755,root,root) %{_bindir}/%{name}-message
 %{_datadir}/%{name}
 %{_datadir}/xsessions/%{name}.desktop
 %{_mandir}/man1/%{name}*
+%{_mandir}/man5/%{name}*
