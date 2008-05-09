@@ -1,4 +1,3 @@
-#
 Summary:	Awesome Window Manager
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
 Name:		awesome
@@ -11,13 +10,10 @@ Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.bz2
 Source1:	%{name}-xsession.desktop
 URL:		http://awesome.naquadah.org/
 BuildRequires:	asciidoc
-#BuildRequires:	autoconf >= 2.59-9
-#BuildRequires:	automake
 BuildRequires:	cairo-devel
 BuildRequires:	doxygen
 BuildRequires:	imlib2-devel
 BuildRequires:	libconfuse-devel
-BuildRequires:	libtool
 BuildRequires:	pango-devel
 BuildRequires:	pkgconfig >= 0.9.0
 BuildRequires:	sed >= 4.0
@@ -30,27 +26,23 @@ BuildRequires:	xorg-lib-libXrandr-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %{expand:%%define	_sysconfdir	%{_sysconfdir}/X11}
-#%undefine	__cxx
 
 %description
 awesome is a floating and tiling window manager initialy based on a
 dwm code rewriting. It's extremely fast, small, dynamic and awesome.
 
-#%description -l pl.UTF-8
+%description -l pl.UTF-8
+awesome to zarządca okien o zachowaniu pływającym i kaflowym,
+początkowo oparty na przepisaniu kodu zarządcy dwm. Jest bardzo
+szybki, mały, dynamiczny i przeraźliwy.
 
 %prep
 %setup -q
 #%patch0 -p1
 
 %build
-#%{__libtoolize}
-#%{__aclocal} -I m4
-#%{__autoconf}
-#%{__autoheader}
-#%{__automake}
 %configure \
 	--disable-static
-
 
 %{__make}
 
