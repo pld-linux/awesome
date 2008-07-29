@@ -1,12 +1,12 @@
 Summary:	Awesome Window Manager
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
 Name:		awesome
-Version:	2.3
+Version:	2.3.3
 Release:	0.1
 License:	GPL v2
 Group:		X11/Window Managers
 Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.bz2
-# Source0-md5:	9824bd7b150c991f5bac396102a9aea7
+# Source0-md5:	024143816d41b31c740e94c2736d9c52
 Source1:	%{name}-xsession.desktop
 URL:		http://awesome.naquadah.org/
 BuildRequires:	asciidoc
