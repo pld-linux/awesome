@@ -1,4 +1,5 @@
 Summary:	Awesome Window Manager
+Summary(hu.UTF-8):	awesome ablakkezelő
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
 Name:		awesome
 Version:	2.3.3
@@ -35,6 +36,10 @@ dwm code rewriting. It's extremely fast, small, dynamic and awesome.
 awesome to zarządca okien o zachowaniu pływającym i kaflowym,
 początkowo oparty na przepisaniu kodu zarządcy dwm. Jest bardzo
 szybki, mały, dynamiczny i przeraźliwy.
+
+%description -l hu.UTF-8
+awesome egy floating és tiling típusú ablakkezelő, amely kezdetben
+a dwm-en alapult. Extrém gyors, kicsi, dinamikus és... félelmetes.
 
 %prep
 %setup -q
