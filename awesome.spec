@@ -24,6 +24,7 @@ BuildRequires:	dbus-devel
 BuildRequires:	gdk-pixbuf-devel
 BuildRequires:	gperf
 BuildRequires:	libev-devel
+BuildRequires:	lua51
 BuildRequires:	lua51-devel
 BuildRequires:	pango-devel
 BuildRequires:	pkgconfig >= 0.9.0
