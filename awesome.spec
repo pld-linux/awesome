@@ -1,17 +1,16 @@
 # TODO
 # - lua-doc
-%define	ver		3.0
 %define	subver	rc6
 %define	rel		1
 Summary:	Awesome Window Manager
 Summary(hu.UTF-8):	awesome ablakkezelő
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
 Name:		awesome
-Version:	%{ver}
+Version:	3.0
 Release:	0.%{subver}.%{rel}
 License:	GPL v2
 Group:		X11/Window Managers
-Source0:	http://awesome.naquadah.org/download/%{name}-%{ver}-%{subver}.tar.bz2
+Source0:	http://awesome.naquadah.org/download/%{name}-%{version}-%{subver}.tar.bz2
 Source1:	%{name}-xsession.desktop
 Patch0:		%{name}-lua-files.patch
 # Source0-md5:	cc5588184a3f77f21af3deb5180f704f
@@ -30,6 +29,7 @@ BuildRequires:	lua51
 BuildRequires:	lua51-devel
 BuildRequires:	pango-devel
 BuildRequires:	pkgconfig >= 0.9.0
+BuildRequires:	rpmbuild(macros) >= 1.293
 BuildRequires:	sed >= 4.0
 BuildRequires:	xcb-util-devel >= 0.2.1
 BuildRequires:	xmlto
@@ -40,7 +40,7 @@ BuildRequires:	xorg-lib-libXinerama-devel
 BuildRequires:	xorg-lib-libXrandr-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%{expand:%%define	_sysconfdir	%{_sysconfdir}/X11}
+%define		_sysconfdir	/etc/X11
 
 %description
 awesome is a highly configurable, next generation framework window
@@ -57,7 +57,7 @@ számítógéppel dolgozik és teljeskörű irányítást akar a grafikus
 felületén.
 
 %prep
-%setup -q -n %{name}-%{ver}-%{subver}
+%setup -q -n %{name}-%{version}-%{subver}
 %patch0 -p1
 
 %build
