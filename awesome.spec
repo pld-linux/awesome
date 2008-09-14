@@ -1,15 +1,17 @@
-## Todo: lua-doc
-%define _MainVersion 3.0
-%define _RC rc6
+# TODO
+# - lua-doc
+%define	ver		3.0
+%define	subver	rc6
+%define	rel		1
 Summary:	Awesome Window Manager
 Summary(hu.UTF-8):	awesome ablakkezelő
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
 Name:		awesome
-Version:	%{_MainVersion}%{_RC}
-Release:	1
+Version:	%{ver}
+Release:	0.%{subver}.%{rel}
 License:	GPL v2
 Group:		X11/Window Managers
-Source0:	http://awesome.naquadah.org/download/%{name}-%{_MainVersion}-%{_RC}.tar.bz2
+Source0:	http://awesome.naquadah.org/download/%{name}-%{ver}-%{subver}.tar.bz2
 Source1:	%{name}-xsession.desktop
 Patch0:		%{name}-lua-files.patch
 # Source0-md5:	cc5588184a3f77f21af3deb5180f704f
@@ -55,11 +57,16 @@ számítógéppel dolgozik és teljeskörű irányítást akar a grafikus
 felületén.
 
 %prep
-%setup -q -n %{name}-%{_MainVersion}-%{_RC}
+%setup -q -n %{name}-%{ver}-%{subver}
 %patch0 -p1
 
 %build
-cmake -DLUA_INC_DIR=%{_includedir}/lua51/ -DPREFIX=%{_prefix} -DAWESOME_DOC_PATH=%{_docdir}/%{name}-%{version} -DAWESOME_DATA_PATH=%{_datadir}/%{name} -DSYSCONFDIR=%{_sysconfdir}
+%cmake \
+	-DLUA_INC_DIR=%{_includedir}/lua51 \
+	-DPREFIX=%{_prefix} \
+	-DAWESOME_DOC_PATH=%{_docdir}/%{name}-%{version} \
+	-DAWESOME_DATA_PATH=%{_datadir}/%{name} \
+	-DSYSCONFDIR=%{_sysconfdir}
 %{__make}
 
 %install
@@ -83,6 +90,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/xsessions/%{name}.desktop
 %{_mandir}/man1/%{name}*
 %{_mandir}/man5/%{name}*
+# XXX shouldn't this dir be in filesystem or xorg packages?
 %dir %{_sysconfdir}/xdg
 %dir %{_sysconfdir}/xdg/awesome
 %{_sysconfdir}/xdg/awesome/*
