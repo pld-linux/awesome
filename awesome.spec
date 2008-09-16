@@ -1,7 +1,11 @@
 # TODO
-# - lua-doc
+# - lua-doc: spec file is created - OK
+# - add luadoc and doxygen to BRs
+# - move the generated html files (with luadoc) to correct place
+# - split two subpackage: awesome and awesome-doc (htmls)
+# - correct xsession.desktop file to appear in *dm
 %define	subver	rc6
-%define	rel		1
+%define	rel		2
 Summary:	Awesome Window Manager
 Summary(hu.UTF-8):	awesome ablakkezelő
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
