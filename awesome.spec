@@ -11,20 +11,20 @@ Summary(hu.UTF-8):	awesome ablakkezelő
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
 Name:		awesome
 Version:	3.0
-Release:	0.%{subver}.%{rel}
+Release:	1
 License:	GPL v2
 Group:		X11/Window Managers
-Source0:	http://awesome.naquadah.org/download/%{name}-%{version}-%{subver}.tar.bz2
+Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.bz2
+# Source0-md5:	32bb9e94a63f421a7a8500f1041b6add
 Source1:	%{name}-xsession.desktop
-Patch0:		%{name}-lua-files.patch
-# Source0-md5:	cc5588184a3f77f21af3deb5180f704f
+Patch0:		%{name}-3.0-lua-files.patch
 URL:		http://awesome.naquadah.org
-# BuildRequires:	luadoc - this is very difficult, because of luadoc reqs :(
+# BuildRequires:	luadoc - it's ready but need to build luadoc (it exists in SPEC-file)
 BuildRequires:	asciidoc
 BuildRequires:	cairo-devel
 BuildRequires:	cmake >= 2.6
 BuildRequires:	dbus-devel
-# doxygen required when build source code reference, but without luadoc...
+# doxygen required when build source code reference - see TODO
 # BuildRequires:	doxygen
 BuildRequires:	gdk-pixbuf-devel
 BuildRequires:	gperf
@@ -35,7 +35,7 @@ BuildRequires:	pango-devel
 BuildRequires:	pkgconfig >= 0.9.0
 BuildRequires:	rpmbuild(macros) >= 1.293
 BuildRequires:	sed >= 4.0
-BuildRequires:	xcb-util-devel >= 0.2.1
+BuildRequires:	xcb-util-devel >= 0.3
 BuildRequires:	xmlto
 BuildRequires:	xorg-lib-libICE-devel
 BuildRequires:	xorg-lib-libXext-devel
@@ -61,7 +61,7 @@ számítógéppel dolgozik és teljeskörű irányítást akar a grafikus
 felületén.
 
 %prep
-%setup -q -n %{name}-%{version}-%{subver}
+%setup -q
 %patch0 -p1
 
 %build
