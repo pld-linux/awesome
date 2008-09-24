@@ -21,9 +21,9 @@ BuildRequires:	dbus-devel
 BuildRequires:	doxygen
 BuildRequires:	gdk-pixbuf-devel
 BuildRequires:	gperf
+BuildRequires:	imlib2-devel
 BuildRequires:	libev-devel
 BuildRequires:	lua-doc
-BuildRequires:	lua51
 BuildRequires:	lua51-devel
 BuildRequires:	pango-devel
 BuildRequires:	pkgconfig >= 0.9.0
