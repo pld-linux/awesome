@@ -1,7 +1,6 @@
 # TODO
 # - correct xsession.desktop file to appear in *dm
-%define	subver	rc6
-%define	rel		2
+#
 Summary:	Awesome Window Manager
 Summary(hu.UTF-8):	awesome ablakkezelő
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
@@ -55,17 +54,29 @@ célközönség a "power user"-ek, fejlesztők és bárki, aki minden nap
 számítógéppel dolgozik és teljeskörű irányítást akar a grafikus
 felületén.
 
+%description -l pl.UTF-8
+awesome jest menedżerem okien charakteryzującym się bardzo dużymi
+możliwościami konfiguracji i rozszerzania fnkcjonalności, pozostając
+przy tym szybki i lekki. Cel ten został osiągnięty dzięki wbudowaniu w
+program języka skryptowego lua.  Awesome został zaprojektowany z myślą
+o bardziej zaawansowanych użytkonikach: programistach oraz innych
+ludziach pracujących na codzień z komputerami, którzy chcą mieć dużą
+kontrolę nad swoim środowiskiem graficznym.
+
 %package doc
 Summary:	awesome window manager API documentation
 Summary(hu.UTF-8):	awesome ablakkezelő API dokumentációja
+Summary(pl.UTF-8):	dokumentacja API awesome
 Group:		X11/Window Managers
 
 %description doc
-awesome window manager API documentation
+awesome window manager API documentation.
 
 %description doc -l hu.UTF-8
-awesome ablakkezelő API dokumentációja
+awesome ablakkezelő API dokumentációja.
 
+%description doc -l pl.UTF-8
+Dokumentacja API menedżera okien awesome.
 
 %prep
 %setup -q
