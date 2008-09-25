@@ -1,5 +1,3 @@
-# TODO
-# - correct xsession.desktop file to appear in *dm
 #
 Summary:	Awesome Window Manager
 Summary(hu.UTF-8):	awesome ablakkezelő
