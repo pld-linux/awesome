@@ -91,20 +91,19 @@ Dokumentacja API menedżera okien awesome.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_datadir}/xsessions
+install -d $RPM_BUILD_ROOT{%{_datadir}/xsessions,%{_docdir}/%{name}-doc-%{version}}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 install %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/xsessions/%{name}.desktop
-install AUTHORS LICENSE README STYLE $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
+
+mv $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}/luadoc $RPM_BUILD_ROOT%{_docdir}/%{name}-doc-%{version}/luadoc
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%dir %{_docdir}/%{name}-%{version}
-%{_docdir}/%{name}-%{version}/[A-Z]*
 %attr(755,root,root) %{_bindir}/%{name}
 %attr(755,root,root) %{_bindir}/%{name}-client
 %attr(755,root,root) %{_bindir}/awsetbg
@@ -117,12 +116,8 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_sysconfdir}/xdg
 %dir %{_sysconfdir}/xdg/awesome
 %{_sysconfdir}/xdg/awesome/*
+%doc AUTHORS BUGS README STYLE
 
 %files doc
 %defattr(644,root,root,755)
-%dir %{_docdir}/%{name}-%{version}/luadoc
-%dir %{_docdir}/%{name}-%{version}/luadoc/files
-%dir %{_docdir}/%{name}-%{version}/luadoc/modules
-%{_docdir}/%{name}-%{version}/luadoc/*
-%{_docdir}/%{name}-%{version}/luadoc/files/*
-%{_docdir}/%{name}-%{version}/luadoc/modules/*
+%{_docdir}/%{name}-doc-%{version}
