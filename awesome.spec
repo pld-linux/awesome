@@ -34,8 +34,8 @@ BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXft-devel
 BuildRequires:	xorg-lib-libXinerama-devel
 BuildRequires:	xorg-lib-libXrandr-devel
+Suggests:	WallpaperChanger
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Suggests:       WallpaperChanger
 
 %define		_sysconfdir	/etc/X11
 
@@ -57,7 +57,7 @@ felületén.
 awesome jest menedżerem okien charakteryzującym się bardzo dużymi
 możliwościami konfiguracji i rozszerzania fnkcjonalności, pozostając
 przy tym szybki i lekki. Cel ten został osiągnięty dzięki wbudowaniu w
-program języka skryptowego lua.  Awesome został zaprojektowany z myślą
+program języka skryptowego lua. Awesome został zaprojektowany z myślą
 o bardziej zaawansowanych użytkonikach: programistach oraz innych
 ludziach pracujących na codzień z komputerami, którzy chcą mieć dużą
 kontrolę nad swoim środowiskiem graficznym.
@@ -65,7 +65,7 @@ kontrolę nad swoim środowiskiem graficznym.
 %package doc
 Summary:	awesome window manager API documentation
 Summary(hu.UTF-8):	awesome ablakkezelő API dokumentációja
-Summary(pl.UTF-8):	dokumentacja API awesome
+Summary(pl.UTF-8):	Dokumentacja API awesome
 Group:		X11/Window Managers
 
 %description doc
