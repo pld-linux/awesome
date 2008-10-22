@@ -25,6 +25,7 @@ BuildRequires:	lua-doc
 BuildRequires:	lua51-devel
 BuildRequires:	pango-devel
 BuildRequires:	pkgconfig >= 0.9.0
+BuildRequires:  readline-devel
 BuildRequires:	rpmbuild(macros) >= 1.293
 BuildRequires:	sed >= 4.0
 BuildRequires:	xcb-util-devel >= 0.3
