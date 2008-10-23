@@ -35,7 +35,6 @@ BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXft-devel
 BuildRequires:	xorg-lib-libXinerama-devel
 BuildRequires:	xorg-lib-libXrandr-devel
-Suggests:	WallpaperChanger
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sysconfdir	/etc/X11
@@ -112,6 +111,7 @@ AWesome Functions very UsefuL: awful plugin az awesome ablakkezelőhöz
 Summary:	theme library for awesome window manager
 Summary(hu.UTF-8):	theme könyvtár az awesome ablakkezelőhöz
 Group:		X11/Window Managers
+Suggests:	WallpaperChanger
 
 %description plugin-beautiful
 Theme library for awesome window manager
