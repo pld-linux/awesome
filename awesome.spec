@@ -17,7 +17,6 @@ BuildRequires:	cairo-devel
 BuildRequires:	cmake >= 2.6
 BuildRequires:	dbus-devel
 BuildRequires:	doxygen
-BuildRequires:	gdk-pixbuf-devel
 BuildRequires:	gperf
 BuildRequires:	imlib2-devel
 BuildRequires:	libev-devel
