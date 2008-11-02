@@ -11,7 +11,7 @@ Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.bz2
 # Source0-md5:	32bb9e94a63f421a7a8500f1041b6add
 Source1:	%{name}-xsession.desktop
 Patch0:		%{name}-3.0-lua-files.patch
-URL:		http://awesome.naquadah.org
+URL:		http://awesome.naquadah.org/
 BuildRequires:	asciidoc
 BuildRequires:	cairo-devel
 BuildRequires:	cmake >= 2.6
