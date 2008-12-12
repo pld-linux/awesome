@@ -3,12 +3,12 @@ Summary:	Awesome Window Manager
 Summary(hu.UTF-8):	awesome ablakkezelő
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
 Name:		awesome
-Version:	3.0
-Release:	3
+Version:	3.1
+Release:	0.1
 License:	GPL v2
 Group:		X11/Window Managers
 Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.bz2
-# Source0-md5:	32bb9e94a63f421a7a8500f1041b6add
+# Source0-md5:	e687a9c0056437207cbdba2f64412624
 Source1:	%{name}-xsession.desktop
 Patch0:		%{name}-3.0-lua-files.patch
 URL:		http://awesome.naquadah.org/
@@ -119,6 +119,58 @@ Theme library for awesome window manager
 Theme könyvtár az awesome ablakkezelőhöz
 
 
+%package plugin-invaders
+Summary:	Awesome Invaders game
+Summary(hu.UTF-8):	Awesome Invaders játék
+Group:		X11/Window Managers
+Requires:	%{name}-plugin-awful
+Requires:	%{name}-plugin-beautiful
+Requires:	ImageMagick
+
+%description plugin-invaders
+Awesome Invaders is, as the name says, an implementation of Space
+Invaders using Awesome 3's Lua interface.
+
+%description plugin-invaders -l hu.UTF-8
+Awesome Invaders, ahogy a neve is mutatja, a Space Invaders
+megvalósítása az awesome 3 lua interfészét használva.
+
+
+%package plugin-naughty
+Summary:	Naughty is a lua library that implements popup notifications for awesome3
+Summary(hu.UTF-8):	Naughty egy lua-könyvtár, amely felugró értesítéseket tesz lehetővé awesome3-ban
+Group:		X11/Window Managers
+Requires:	%{name}-plugin-awful
+Requires:	%{name}-plugin-beautiful
+
+%description plugin-naughty
+Naughty is a lua library that implements popup notifications for
+awesome3.
+
+%description plugin-naughty -l hu.UTF-8
+Naughty egy lua-könyvtár, amely felugró értesítéseket tesz lehetővé
+awesome3-ban.
+
+
+%package plugin-revelation
+Summary:	Revelation brings up a view of all your open clients
+Summary(hu.UTF-8):	Revelation egy nézetet hoz létre az összes megnyitott kliensről
+Group:		X11/Window Managers
+
+%description plugin-revelation
+Revelation brings up a view of all your open clients; left-clicking a
+client pops to the first tag that client is visible on and
+raises/focuses the client. In addition, the Enter key pops to the
+currently focused client, and Escape aborts.
+
+%description plugin-revelation -l hu.UTF-8
+Revelation egy nézetet hoz létre az összes megnyitott kliensről; egy
+kliensre bal gombbal kattintva az első olyan cimkére ugorhatsz, ahol a
+kliens látható, és fókuszba hozza a klienst. Az Enter billentyűre a
+fókuszban levő kliensre ugrik, és az Escape billentyűvel megszakítható
+a művelet.
+
+
 %package plugin-tabulous
 Summary:	Fabulous tabs for awesome
 Summary(hu.UTF-8):	Tab-ok awesome-hoz
@@ -162,11 +214,15 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/%{name}
 %attr(755,root,root) %{_bindir}/%{name}-client
 %attr(755,root,root) %{_bindir}/awsetbg
+%dir %{_datadir}/%{name}/lib
+%{_datadir}/%{name}/lib/capi.lua
 %dir %{_datadir}/%{name}
+%dir %{_datadir}/%{name}/icons
 %dir %{_datadir}/%{name}/icons
 %{_datadir}/%{name}/icons
 %{_datadir}/xsessions/%{name}.desktop
 %{_mandir}/man1/%{name}*
+%{_mandir}/man1/awsetbg*
 %{_mandir}/man5/%{name}*
 %doc AUTHORS BUGS README STYLE
 
@@ -185,19 +241,33 @@ rm -rf $RPM_BUILD_ROOT
 
 %files plugin-awful
 %defattr(644,root,root,755)
-%dir %{_datadir}/awesome/lib
-%{_datadir}/awesome/lib/awful.lua
+%dir %{_datadir}/awesome/lib/awful
+%{_datadir}/awesome/lib/awful/*.lua
 
 
 %files plugin-beautiful
 %defattr(644,root,root,755)
-%dir %{_datadir}/awesome/lib
 %dir %{_datadir}/awesome/themes/*
 %{_datadir}/awesome/lib/beautiful.lua
 %{_datadir}/awesome/themes
 
 
+%files plugin-invaders
+%defattr(644,root,root,755)
+%{_datadir}/awesome/lib/invaders.lua
+%dir %{_datadir}/awesome/icons/invaders
+%{_datadir}/awesome/icons/invaders/*.png
+
+
+%files plugin-naughty
+%defattr(644,root,root,755)
+%{_datadir}/awesome/lib/naughty.lua
+
+
+%files plugin-revelation
+%defattr(644,root,root,755)
+%{_datadir}/awesome/lib/revelation.lua
+
 %files plugin-tabulous
 %defattr(644,root,root,755)
-%dir %{_datadir}/awesome/lib
 %{_datadir}/awesome/lib/tabulous.lua
