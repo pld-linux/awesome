@@ -76,7 +76,6 @@ awesome ablakkezelő API dokumentációja.
 %description doc -l pl.UTF-8
 Dokumentacja API menedżera okien awesome.
 
-
 %package example-config
 Summary:	Example config for awesome window manager
 Summary(hu.UTF-8):	Egy alap/példa konfig az awesome ablakkezelőhöz
@@ -93,7 +92,6 @@ awesome 3.x window manager, it can be a good starting point.
 Egy alap/példa konfig az awesome ablakkezelőhöz. Ha még sose
 használtál awesome 3.x ablakkezelőt, jó kiindulópont lehet.
 
-
 %package plugin-awful
 Summary:	awful plugin for awesome window manager
 Summary(hu.UTF-8):	awful plugin az awesome ablakkezelőhöz
@@ -104,7 +102,6 @@ AWesome Functions very UsefuL: awful plugin for awesome window manager
 
 %description plugin-awful -l hu.UTF-8
 AWesome Functions very UsefuL: awful plugin az awesome ablakkezelőhöz
-
 
 %package plugin-beautiful
 Summary:	theme library for awesome window manager
@@ -117,7 +114,6 @@ Theme library for awesome window manager
 
 %description plugin-beautiful
 Theme könyvtár az awesome ablakkezelőhöz
-
 
 %package plugin-invaders
 Summary:	Awesome Invaders game
@@ -135,7 +131,6 @@ Invaders using Awesome 3's Lua interface.
 Awesome Invaders, ahogy a neve is mutatja, a Space Invaders
 megvalósítása az awesome 3 lua interfészét használva.
 
-
 %package plugin-naughty
 Summary:	Naughty is a lua library that implements popup notifications for awesome3
 Summary(hu.UTF-8):	Naughty egy lua-könyvtár, amely felugró értesítéseket tesz lehetővé awesome3-ban
@@ -150,7 +145,6 @@ awesome3.
 %description plugin-naughty -l hu.UTF-8
 Naughty egy lua-könyvtár, amely felugró értesítéseket tesz lehetővé
 awesome3-ban.
-
 
 %package plugin-revelation
 Summary:	Revelation brings up a view of all your open clients
@@ -170,7 +164,6 @@ kliens látható, és fókuszba hozza a klienst. Az Enter billentyűre a
 fókuszban levő kliensre ugrik, és az Escape billentyűvel megszakítható
 a művelet.
 
-
 %package plugin-tabulous
 Summary:	Fabulous tabs for awesome
 Summary(hu.UTF-8):	Tab-ok awesome-hoz
@@ -181,7 +174,6 @@ Fabulous tabs for awesome
 
 %description plugin-tabulous -l hu.UTF-8
 Tab-ok awesome-hoz
-
 
 %prep
 %setup -q
@@ -226,11 +218,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man5/%{name}*
 %doc AUTHORS BUGS README STYLE
 
-
 %files doc
 %defattr(644,root,root,755)
 %{_docdir}/%{name}-doc-%{version}
-
 
 %files example-config
 %defattr(644,root,root,755)
@@ -238,12 +228,10 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_sysconfdir}/xdg/awesome
 %{_sysconfdir}/xdg/awesome/*
 
-
 %files plugin-awful
 %defattr(644,root,root,755)
 %dir %{_datadir}/awesome/lib/awful
 %{_datadir}/awesome/lib/awful/*.lua
-
 
 %files plugin-beautiful
 %defattr(644,root,root,755)
@@ -251,18 +239,15 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/awesome/lib/beautiful.lua
 %{_datadir}/awesome/themes
 
-
 %files plugin-invaders
 %defattr(644,root,root,755)
 %{_datadir}/awesome/lib/invaders.lua
 %dir %{_datadir}/awesome/icons/invaders
 %{_datadir}/awesome/icons/invaders/*.png
 
-
 %files plugin-naughty
 %defattr(644,root,root,755)
 %{_datadir}/awesome/lib/naughty.lua
-
 
 %files plugin-revelation
 %defattr(644,root,root,755)
