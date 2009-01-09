@@ -107,7 +107,8 @@ AWesome Functions very UsefuL: awful plugin az awesome ablakkezelőhöz
 Summary:	theme library for awesome window manager
 Summary(hu.UTF-8):	theme könyvtár az awesome ablakkezelőhöz
 Group:		X11/Window Managers
-Suggests:	WallpaperChanger
+Requires:	Esetroot
+Requires:	habak
 
 %description plugin-beautiful
 Theme library for awesome window manager
