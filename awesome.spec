@@ -1,7 +1,7 @@
 #
-Summary:	Awesome Window Manager
+Summary:	awesome window manager
 Summary(hu.UTF-8):	awesome ablakkezelő
-Summary(pl.UTF-8):	Zarządca okien X - Awesome
+Summary(pl.UTF-8):	Menedżer okien X - Awesome
 Name:		awesome
 Version:	3.1.1
 Release:	0.1
@@ -56,7 +56,7 @@ felületén.
 
 %description -l pl.UTF-8
 awesome jest menedżerem okien charakteryzującym się bardzo dużymi
-możliwościami konfiguracji i rozszerzania fnkcjonalności, pozostając
+możliwościami konfiguracji i rozszerzania funkcjonalności, pozostając
 przy tym szybki i lekki. Cel ten został osiągnięty dzięki wbudowaniu w
 program języka skryptowego lua. Awesome został zaprojektowany z myślą
 o bardziej zaawansowanych użytkonikach: programistach oraz innych
@@ -81,22 +81,29 @@ Dokumentacja API menedżera okien awesome.
 %package example-config
 Summary:	Example config for awesome window manager
 Summary(hu.UTF-8):	Egy alap/példa konfig az awesome ablakkezelőhöz
+Summary(pl.UTF-8):	Przykładowy plik konfiguracyjny dla menedżera okien awesome
 Group:		X11/Window Managers
 Requires:	awesome-plugin-awful
 Requires:	awesome-plugin-beautiful
 Requires:	awesome-plugin-tabulous
 
 %description example-config
-Example config for awesome window manager. If you never used before
-awesome 3.x window manager, it can be a good starting point.
+Example config for awesome window manager. If you had never used
+awesome 3.x window manager before, it can be a good starting point.
 
 %description example-config -l hu.UTF-8
 Egy alap/példa konfig az awesome ablakkezelőhöz. Ha még sose
 használtál awesome 3.x ablakkezelőt, jó kiindulópont lehet.
 
+%description example-config -l pl.UTF-8
+Przykładowy plik konfiguracyjny dla menedżera okien awesome. Jeżeli
+nigdy wcześniej nie używałeś awesome 3.x, ten plik będzie dobrym
+punktem wyjścia.
+
 %package plugin-awful
 Summary:	awful plugin for awesome window manager
 Summary(hu.UTF-8):	awful plugin az awesome ablakkezelőhöz
+Summary(pl.UTF-8):	plugin awesome dla menedżera okien awesome
 Group:		X11/Window Managers
 
 %description plugin-awful
@@ -105,21 +112,30 @@ AWesome Functions very UsefuL: awful plugin for awesome window manager
 %description plugin-awful -l hu.UTF-8
 AWesome Functions very UsefuL: awful plugin az awesome ablakkezelőhöz
 
+%description plugin-awful -l pl.UTF-8
+AWesome Functions very UsefuL: plugin awful dla menedżera okien
+awesome
+
 %package plugin-beautiful
 Summary:	theme library for awesome window manager
 Summary(hu.UTF-8):	theme könyvtár az awesome ablakkezelőhöz
+Summary(pl.UTF-8):	biblioteka styli dla menedżera okien awesome
 Group:		X11/Window Managers
 Suggests:	WallpaperChanger
 
 %description plugin-beautiful
-Theme library for awesome window manager
+Theme library for awesome window manager.
 
-%description plugin-beautiful
-Theme könyvtár az awesome ablakkezelőhöz
+%description plugin-beautiful -l hu.UTF-8
+Theme könyvtár az awesome ablakkezelőhöz.
+
+%description plugin-beautiful -l pl.UTF-8
+Biblioteka styli dla menedżera okien awesome.
 
 %package plugin-invaders
 Summary:	Awesome Invaders game
 Summary(hu.UTF-8):	Awesome Invaders játék
+Summary(pl.UTF-8):	Gra Awesome Invaders
 Group:		X11/Window Managers
 Requires:	%{name}-plugin-awful
 Requires:	%{name}-plugin-beautiful
@@ -127,15 +143,20 @@ Requires:	ImageMagick
 
 %description plugin-invaders
 Awesome Invaders is, as the name says, an implementation of Space
-Invaders using Awesome 3's Lua interface.
+Invaders using awesome 3's Lua interface.
 
 %description plugin-invaders -l hu.UTF-8
 Awesome Invaders, ahogy a neve is mutatja, a Space Invaders
 megvalósítása az awesome 3 lua interfészét használva.
 
+%description plugin-invaders -l pl.UTF-8
+Awesome Invaders jest grą Space Invaders zaimplementowaną w intefejsie
+Lua menedżera okien awesome 3.
+
 %package plugin-naughty
-Summary:	Naughty is a lua library that implements popup notifications for awesome3
+Summary:	Naughty is a lua library that implements popup notifications for awesome 3
 Summary(hu.UTF-8):	Naughty egy lua-könyvtár, amely felugró értesítéseket tesz lehetővé awesome3-ban
+Summary(pl.UTF-8):	Powiadomienia w postaci wyskakujących okienek dla awesome 3
 Group:		X11/Window Managers
 Requires:	%{name}-plugin-awful
 Requires:	%{name}-plugin-beautiful
@@ -148,9 +169,14 @@ awesome3.
 Naughty egy lua-könyvtár, amely felugró értesítéseket tesz lehetővé
 awesome3-ban.
 
+%description plugin-naughty -l pl.UTF-8
+Biblioteka lua dla menedżera okien awesome 3 implementująca
+powiadomienia w formie wyskakujących okienek.
+
 %package plugin-revelation
-Summary:	Revelation brings up a view of all your open clients
+Summary:	Plugin that allows to bring a view of all your open clients
 Summary(hu.UTF-8):	Revelation egy nézetet hoz létre az összes megnyitott kliensről
+Summary(pl.UTF-8):	Plugin dla awesome 3 dający widok wszystkich otwartych okien
 Group:		X11/Window Managers
 
 %description plugin-revelation
@@ -166,16 +192,27 @@ kliens látható, és fókuszba hozza a klienst. Az Enter billentyűre a
 fókuszban levő kliensre ugrik, és az Escape billentyűvel megszakítható
 a művelet.
 
+%description plugin-revelation -l pl.UTF-8
+Revelation umożliwia podgląd wszystkich otwartych okien. Kliknicia
+prawym przyciskiem myszy na okienko przełącza na pierwszy tag, na
+którym okno jest widoczne i przywołuje okno na pierwszy plan.
+Dodatkowo przycisk Enter przełącza fokus mięszy oknami a przycisk
+Escape przerywa podgląd okien.
+
 %package plugin-tabulous
-Summary:	Fabulous tabs for awesome
+Summary:	Fabulous tabs for awesome window manager
 Summary(hu.UTF-8):	Tab-ok awesome-hoz
+Summary(pl.UTF-8):	Zakładki dla menedżera okien awesome
 Group:		X11/Window Managers
 
 %description plugin-tabulous
-Fabulous tabs for awesome
+Fabulous tabs for awesome.
 
 %description plugin-tabulous -l hu.UTF-8
-Tab-ok awesome-hoz
+Tab-ok awesome-hoz.
+
+%description plugin-tabulous -l pl.UTF-8
+Zakładki dla menedżera okien awesome.
 
 %prep
 %setup -q
