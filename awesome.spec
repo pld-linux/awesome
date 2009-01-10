@@ -1,7 +1,6 @@
-#
 Summary:	awesome window manager
 Summary(hu.UTF-8):	awesome ablakkezelő
-Summary(pl.UTF-8):	Menedżer okien X - Awesome
+Summary(pl.UTF-8):	Zarządca okien X - Awesome
 Name:		awesome
 Version:	3.1.1
 Release:	1
@@ -55,12 +54,12 @@ számítógéppel dolgozik és teljeskörű irányítást akar a grafikus
 felületén.
 
 %description -l pl.UTF-8
-awesome jest menedżerem okien charakteryzującym się bardzo dużymi
+awesome jest zarządcą okien charakteryzującym się bardzo dużymi
 możliwościami konfiguracji i rozszerzania funkcjonalności, pozostając
-przy tym szybki i lekki. Cel ten został osiągnięty dzięki wbudowaniu w
-program języka skryptowego lua. Awesome został zaprojektowany z myślą
-o bardziej zaawansowanych użytkonikach: programistach oraz innych
-ludziach pracujących na codzień z komputerami, którzy chcą mieć dużą
+przy tym szybkim i lekkim. Cel ten został osiągnięty dzięki wbudowaniu
+w program języka skryptowego lua. Awesome został zaprojektowany z
+myślą o bardziej zaawansowanych użytkownikach: programistach oraz
+innych pracujących na codzień z komputerami, którzy chcą mieć dużą
 kontrolę nad swoim środowiskiem graficznym.
 
 %package doc
@@ -76,12 +75,12 @@ awesome window manager API documentation.
 awesome ablakkezelő API dokumentációja.
 
 %description doc -l pl.UTF-8
-Dokumentacja API menedżera okien awesome.
+Dokumentacja API zarządcy okien awesome.
 
 %package example-config
 Summary:	Example config for awesome window manager
 Summary(hu.UTF-8):	Egy alap/példa konfig az awesome ablakkezelőhöz
-Summary(pl.UTF-8):	Przykładowy plik konfiguracyjny dla menedżera okien awesome
+Summary(pl.UTF-8):	Przykładowy plik konfiguracyjny dla zarządcy okien awesome
 Group:		X11/Window Managers
 Requires:	awesome-plugin-awful = %{version}-%{release}
 Requires:	awesome-plugin-beautiful = %{version}-%{release}
@@ -96,30 +95,31 @@ Egy alap/példa konfig az awesome ablakkezelőhöz. Ha még sose
 használtál awesome 3.x ablakkezelőt, jó kiindulópont lehet.
 
 %description example-config -l pl.UTF-8
-Przykładowy plik konfiguracyjny dla menedżera okien awesome. Jeżeli
-nigdy wcześniej nie używałeś awesome 3.x, ten plik będzie dobrym
-punktem wyjścia.
+Przykładowy plik konfiguracyjny dla zarządcy okien awesome. Ten plik
+jest dobrym punktem wyjścia dla osób nie używających wcześniej
+awesome 3.x.
 
 %package plugin-awful
 Summary:	awful plugin for awesome window manager
 Summary(hu.UTF-8):	awful plugin az awesome ablakkezelőhöz
-Summary(pl.UTF-8):	plugin awesome dla menedżera okien awesome
+Summary(pl.UTF-8):	Wtyczka awful dla zarządcy okien awesome
 Group:		X11/Window Managers
 
 %description plugin-awful
-AWesome Functions very UsefuL: awful plugin for awesome window manager
+AWesome Functions very UsefuL: awful plugin for awesome window
+manager.
 
 %description plugin-awful -l hu.UTF-8
-AWesome Functions very UsefuL: awful plugin az awesome ablakkezelőhöz
+AWesome Functions very UsefuL: awful plugin az awesome ablakkezelőhöz.
 
 %description plugin-awful -l pl.UTF-8
-AWesome Functions very UsefuL: plugin awful dla menedżera okien
-awesome
+AWesome Functions very UsefuL: wtyczka awful dla zarządcy okien
+awesome.
 
 %package plugin-beautiful
-Summary:	theme library for awesome window manager
-Summary(hu.UTF-8):	theme könyvtár az awesome ablakkezelőhöz
-Summary(pl.UTF-8):	biblioteka styli dla menedżera okien awesome
+Summary:	Theme library for awesome window manager
+Summary(hu.UTF-8):	Theme könyvtár az awesome ablakkezelőhöz
+Summary(pl.UTF-8):	Biblioteka styli dla zarządcy okien awesome
 Group:		X11/Window Managers
 Suggests:	WallpaperChanger
 
@@ -130,7 +130,7 @@ Theme library for awesome window manager.
 Theme könyvtár az awesome ablakkezelőhöz.
 
 %description plugin-beautiful -l pl.UTF-8
-Biblioteka styli dla menedżera okien awesome.
+Biblioteka styli dla zarządcy okien awesome.
 
 %package plugin-invaders
 Summary:	Awesome Invaders game
@@ -151,7 +151,7 @@ megvalósítása az awesome 3 lua interfészét használva.
 
 %description plugin-invaders -l pl.UTF-8
 Awesome Invaders jest grą Space Invaders zaimplementowaną w intefejsie
-Lua menedżera okien awesome 3.
+Lua zarządcy okien awesome 3.
 
 %package plugin-naughty
 Summary:	Naughty is a lua library that implements popup notifications for awesome 3
@@ -170,13 +170,13 @@ Naughty egy lua-könyvtár, amely felugró értesítéseket tesz lehetővé
 awesome3-ban.
 
 %description plugin-naughty -l pl.UTF-8
-Biblioteka lua dla menedżera okien awesome 3 implementująca
+Biblioteka lua dla zarządcy okien awesome 3 implementująca
 powiadomienia w formie wyskakujących okienek.
 
 %package plugin-revelation
 Summary:	Plugin that allows to bring a view of all your open clients
 Summary(hu.UTF-8):	Revelation egy nézetet hoz létre az összes megnyitott kliensről
-Summary(pl.UTF-8):	Plugin dla awesome 3 dający widok wszystkich otwartych okien
+Summary(pl.UTF-8):	Wtyczka do awesome 3 dająca widok wszystkich otwartych okien
 Group:		X11/Window Managers
 
 %description plugin-revelation
@@ -193,16 +193,16 @@ fókuszban levő kliensre ugrik, és az Escape billentyűvel megszakítható
 a művelet.
 
 %description plugin-revelation -l pl.UTF-8
-Revelation umożliwia podgląd wszystkich otwartych okien. Kliknicia
-prawym przyciskiem myszy na okienko przełącza na pierwszy tag, na
+Revelation umożliwia podgląd wszystkich otwartych okien. Kliknięcie
+prawym przyciskiem myszy na okienko przełącza na pierwszy znacznik, na
 którym okno jest widoczne i przywołuje okno na pierwszy plan.
-Dodatkowo przycisk Enter przełącza fokus mięszy oknami a przycisk
-Escape przerywa podgląd okien.
+Dodatkowo klawisz Enter przełącza fokus mięszy oknami a klawisz Esc
+przerywa podgląd okien.
 
 %package plugin-tabulous
 Summary:	Fabulous tabs for awesome window manager
 Summary(hu.UTF-8):	Tab-ok awesome-hoz
-Summary(pl.UTF-8):	Zakładki dla menedżera okien awesome
+Summary(pl.UTF-8):	Zakładki dla zarządcy okien awesome
 Group:		X11/Window Managers
 
 %description plugin-tabulous
@@ -212,7 +212,7 @@ Fabulous tabs for awesome.
 Tab-ok awesome-hoz.
 
 %description plugin-tabulous -l pl.UTF-8
-Zakładki dla menedżera okien awesome.
+Zakładki dla zarządcy okien awesome.
 
 %prep
 %setup -q
@@ -242,6 +242,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc AUTHORS BUGS README STYLE
 %attr(755,root,root) %{_bindir}/%{name}
 %attr(755,root,root) %{_bindir}/%{name}-client
 %attr(755,root,root) %{_bindir}/awsetbg
@@ -255,7 +256,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/%{name}*
 %{_mandir}/man1/awsetbg*
 %{_mandir}/man5/%{name}*
-%doc AUTHORS BUGS README STYLE
 
 %files doc
 %defattr(644,root,root,755)
