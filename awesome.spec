@@ -83,9 +83,9 @@ Summary:	Example config for awesome window manager
 Summary(hu.UTF-8):	Egy alap/példa konfig az awesome ablakkezelőhöz
 Summary(pl.UTF-8):	Przykładowy plik konfiguracyjny dla menedżera okien awesome
 Group:		X11/Window Managers
-Requires:	awesome-plugin-awful
-Requires:	awesome-plugin-beautiful
-Requires:	awesome-plugin-tabulous
+Requires:	awesome-plugin-awful = %{version}-%{release}
+Requires:	awesome-plugin-beautiful = %{version}-%{release}
+Requires:	awesome-plugin-tabulous = %{version}-%{release}
 
 %description example-config
 Example config for awesome window manager. If you had never used
@@ -137,8 +137,8 @@ Summary:	Awesome Invaders game
 Summary(hu.UTF-8):	Awesome Invaders játék
 Summary(pl.UTF-8):	Gra Awesome Invaders
 Group:		X11/Window Managers
-Requires:	%{name}-plugin-awful
-Requires:	%{name}-plugin-beautiful
+Requires:	%{name}-plugin-awful = %{version}-%{release}
+Requires:	%{name}-plugin-beautiful = %{version}-%{release}
 Requires:	ImageMagick
 
 %description plugin-invaders
@@ -158,8 +158,8 @@ Summary:	Naughty is a lua library that implements popup notifications for awesom
 Summary(hu.UTF-8):	Naughty egy lua-könyvtár, amely felugró értesítéseket tesz lehetővé awesome3-ban
 Summary(pl.UTF-8):	Powiadomienia w postaci wyskakujących okienek dla awesome 3
 Group:		X11/Window Managers
-Requires:	%{name}-plugin-awful
-Requires:	%{name}-plugin-beautiful
+Requires:	%{name}-plugin-awful = %{version}-%{release}
+Requires:	%{name}-plugin-beautiful = %{version}-%{release}
 
 %description plugin-naughty
 Naughty is a lua library that implements popup notifications for
