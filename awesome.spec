@@ -87,8 +87,8 @@ Requires:	awesome-plugin-beautiful = %{version}-%{release}
 Requires:	awesome-plugin-tabulous = %{version}-%{release}
 
 %description example-config
-Example config for awesome window manager. If you had never used
-awesome 3.x window manager before, it can be a good starting point.
+Example config for awesome window manager. It can be a good starting point for
+those people, who have never used awesome window manager before.
 
 %description example-config -l hu.UTF-8
 Egy alap/példa konfig az awesome ablakkezelőhöz. Ha még sose
