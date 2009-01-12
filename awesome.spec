@@ -66,7 +66,7 @@ kontrolę nad swoim środowiskiem graficznym.
 Summary:	awesome window manager API documentation
 Summary(hu.UTF-8):	awesome ablakkezelő API dokumentációja
 Summary(pl.UTF-8):	Dokumentacja API awesome
-Group:		X11/Window Managers
+Group:		Documentation
 
 %description doc
 awesome window manager API documentation.
@@ -81,7 +81,7 @@ Dokumentacja API zarządcy okien awesome.
 Summary:	Example config for awesome window manager
 Summary(hu.UTF-8):	Egy alap/példa konfig az awesome ablakkezelőhöz
 Summary(pl.UTF-8):	Przykładowy plik konfiguracyjny dla zarządcy okien awesome
-Group:		X11/Window Managers
+Group:		Documentation
 Requires:	%{name}-plugin-awful = %{version}-%{release}
 Requires:	%{name}-plugin-beautiful = %{version}-%{release}
 Requires:	%{name}-plugin-tabulous = %{version}-%{release}
