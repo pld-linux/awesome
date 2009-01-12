@@ -82,9 +82,9 @@ Summary:	Example config for awesome window manager
 Summary(hu.UTF-8):	Egy alap/példa konfig az awesome ablakkezelőhöz
 Summary(pl.UTF-8):	Przykładowy plik konfiguracyjny dla zarządcy okien awesome
 Group:		X11/Window Managers
-Requires:	awesome-plugin-awful = %{version}-%{release}
-Requires:	awesome-plugin-beautiful = %{version}-%{release}
-Requires:	awesome-plugin-tabulous = %{version}-%{release}
+Requires:	%{name}-plugin-awful = %{version}-%{release}
+Requires:	%{name}-plugin-beautiful = %{version}-%{release}
+Requires:	%{name}-plugin-tabulous = %{version}-%{release}
 
 %description example-config
 Example config for awesome window manager. It can be a good starting
@@ -97,8 +97,8 @@ használtál awesome 3.x ablakkezelőt, jó kiindulópont lehet.
 
 %description example-config -l pl.UTF-8
 Przykładowy plik konfiguracyjny dla zarządcy okien awesome. Ten plik
-jest dobrym punktem wyjścia dla osób nie używających wcześniej
-awesome 3.x.
+jest dobrym punktem wyjścia dla osób nie używających wcześniej awesome
+3.x.
 
 %package plugin-awful
 Summary:	awful plugin for awesome window manager
