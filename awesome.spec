@@ -3,13 +3,14 @@ Summary(hu.UTF-8):	awesome ablakkezelő
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
 Name:		awesome
 Version:	3.1.2
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		X11/Window Managers
 Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.bz2
 # Source0-md5:	01ad5a4e4919b664bfe3f0c627ed291f
 Source1:	%{name}-xsession.desktop
 Patch0:		%{name}-3.0-lua-files.patch
+Patch1:		%{name}-xcb.patch
 URL:		http://awesome.naquadah.org/
 BuildRequires:	asciidoc
 BuildRequires:	cairo-devel
@@ -28,7 +29,7 @@ BuildRequires:	pkgconfig >= 0.9.0
 BuildRequires:	readline-devel
 BuildRequires:	rpmbuild(macros) >= 1.293
 BuildRequires:	sed >= 4.0
-BuildRequires:	xcb-util-devel = 0.3.2
+BuildRequires:	xcb-util-devel >= 0.3.3
 BuildRequires:	xmlto
 BuildRequires:	xorg-lib-libICE-devel
 BuildRequires:	xorg-lib-libXext-devel
@@ -218,6 +219,7 @@ Zakładki dla zarządcy okien awesome.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %cmake \
