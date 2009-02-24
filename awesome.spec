@@ -83,6 +83,7 @@ Summary:	Example config for awesome window manager
 Summary(hu.UTF-8):	Egy alap/példa konfig az awesome ablakkezelőhöz
 Summary(pl.UTF-8):	Przykładowy plik konfiguracyjny dla zarządcy okien awesome
 Group:		Documentation
+Requires:	%{name} = %{version}-%{release}
 Requires:	%{name}-plugin-awful = %{version}-%{release}
 Requires:	%{name}-plugin-beautiful = %{version}-%{release}
 Requires:	%{name}-plugin-tabulous = %{version}-%{release}
@@ -106,6 +107,7 @@ Summary:	awful plugin for awesome window manager
 Summary(hu.UTF-8):	awful plugin az awesome ablakkezelőhöz
 Summary(pl.UTF-8):	Wtyczka awful dla zarządcy okien awesome
 Group:		X11/Window Managers
+Requires:	%{name} = %{version}-%{release}
 
 %description plugin-awful
 AWesome Functions very UsefuL: awful plugin for awesome window
@@ -123,6 +125,7 @@ Summary:	Theme library for awesome window manager
 Summary(hu.UTF-8):	Theme könyvtár az awesome ablakkezelőhöz
 Summary(pl.UTF-8):	Biblioteka styli dla zarządcy okien awesome
 Group:		X11/Window Managers
+Requires:	%{name} = %{version}-%{release}
 Suggests:	WallpaperChanger
 
 %description plugin-beautiful
@@ -139,6 +142,7 @@ Summary:	Awesome Invaders game
 Summary(hu.UTF-8):	Awesome Invaders játék
 Summary(pl.UTF-8):	Gra Awesome Invaders
 Group:		X11/Window Managers
+Requires:	%{name} = %{version}-%{release}
 Requires:	%{name}-plugin-awful = %{version}-%{release}
 Requires:	%{name}-plugin-beautiful = %{version}-%{release}
 Requires:	ImageMagick
@@ -160,6 +164,7 @@ Summary:	Naughty is a lua library that implements popup notifications for awesom
 Summary(hu.UTF-8):	Naughty egy lua-könyvtár, amely felugró értesítéseket tesz lehetővé awesome3-ban
 Summary(pl.UTF-8):	Powiadomienia w postaci wyskakujących okienek dla awesome 3
 Group:		X11/Window Managers
+Requires:	%{name} = %{version}-%{release}
 Requires:	%{name}-plugin-awful = %{version}-%{release}
 Requires:	%{name}-plugin-beautiful = %{version}-%{release}
 
@@ -180,6 +185,7 @@ Summary:	Plugin that allows to bring a view of all your open clients
 Summary(hu.UTF-8):	Revelation egy nézetet hoz létre az összes megnyitott kliensről
 Summary(pl.UTF-8):	Wtyczka do awesome 3 dająca widok wszystkich otwartych okien
 Group:		X11/Window Managers
+Requires:	%{name} = %{version}-%{release}
 
 %description plugin-revelation
 Revelation brings up a view of all your open clients; left-clicking a
@@ -206,6 +212,7 @@ Summary:	Fabulous tabs for awesome window manager
 Summary(hu.UTF-8):	Tab-ok awesome-hoz
 Summary(pl.UTF-8):	Zakładki dla zarządcy okien awesome
 Group:		X11/Window Managers
+Requires:	%{name} = %{version}-%{release}
 
 %description plugin-tabulous
 Fabulous tabs for awesome.
