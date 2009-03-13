@@ -2,15 +2,14 @@ Summary:	awesome window manager
 Summary(hu.UTF-8):	awesome ablakkezelő
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
 Name:		awesome
-Version:	3.1.2
-Release:	3
+Version:	3.2
+Release:	0.1
 License:	GPL v2
 Group:		X11/Window Managers
 Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.bz2
-# Source0-md5:	01ad5a4e4919b664bfe3f0c627ed291f
+# Source0-md5:	03769cd590b36d052120f9a1ca57f7d7
 Source1:	%{name}-xsession.desktop
 Patch0:		%{name}-3.0-lua-files.patch
-Patch1:		%{name}-xcb.patch
 URL:		http://awesome.naquadah.org/
 BuildRequires:	asciidoc
 BuildRequires:	cairo-devel
@@ -36,6 +35,7 @@ BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXft-devel
 BuildRequires:	xorg-lib-libXinerama-devel
 BuildRequires:	xorg-lib-libXrandr-devel
+Suggests:	%{name}-plugin-awful = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sysconfdir	/etc/X11
@@ -87,6 +87,7 @@ Requires:	%{name} = %{version}-%{release}
 Requires:	%{name}-plugin-awful = %{version}-%{release}
 Requires:	%{name}-plugin-beautiful = %{version}-%{release}
 Requires:	%{name}-plugin-tabulous = %{version}-%{release}
+Requires:	%{name}-themes = %{version}-%{release}
 
 %description example-config
 Example config for awesome window manager. It can be a good starting
@@ -223,10 +224,34 @@ Tab-ok awesome-hoz.
 %description plugin-tabulous -l pl.UTF-8
 Zakładki dla zarządcy okien awesome.
 
+%package plugin-telak
+Summary:	Root window image display library
+Summary(hu.UTF-8):	Root ablak kezeléséhez könyvtár
+Group:		X11/Window Managers
+Requires:	%{name} = %{version}-%{release}
+Requires:	lua-socket
+
+%description plugin-telak
+Root window image display library.
+
+%description plugin-telak -l hu.UTF-8
+Root ablak kezeléséhez könyvtár.
+
+%package themes
+Summary:	Themes for awesome window manager
+Summary(hu.UTF-8):	Témák az awesome ablakkezelőhöz
+Group:		X11/Window Managers
+Requires:	%{name} = %{version}-%{release}
+
+%description themes
+Themes for awesome window manager.
+
+%description themes -l hu.UTF-8
+Témák az awesome ablakkezelőhöz.
+
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 %cmake \
@@ -246,6 +271,9 @@ install -d $RPM_BUILD_ROOT{%{_datadir}/xsessions,%{_docdir}/%{name}-doc-%{versio
 install %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/xsessions/%{name}.desktop
 
 mv $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}/luadoc $RPM_BUILD_ROOT%{_docdir}/%{name}-doc-%{version}/luadoc
+for file in $(%{__find} $RPM_BUILD_ROOT%{_datadir}/%{name} -iname "*.in"); do
+	%{__rm} ${file}
+done
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -259,8 +287,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/%{name}/lib
 %{_datadir}/%{name}/lib/capi.lua
 %dir %{_datadir}/%{name}
-%dir %{_datadir}/%{name}/icons
-%dir %{_datadir}/%{name}/icons
 %{_datadir}/%{name}/icons
 %{_datadir}/xsessions/%{name}.desktop
 %{_mandir}/man1/%{name}*
@@ -281,12 +307,18 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %dir %{_datadir}/awesome/lib/awful
 %{_datadir}/awesome/lib/awful/*.lua
+%{_datadir}/awesome/lib/awful/layout
 
 %files plugin-beautiful
 %defattr(644,root,root,755)
-%dir %{_datadir}/awesome/themes/*
 %{_datadir}/awesome/lib/beautiful.lua
 %{_datadir}/awesome/themes
+
+%files themes
+%defattr(644,root,root,755)
+%dir %{_datadir}/awesome/themes
+%{_datadir}/awesome/themes/default
+%{_datadir}/awesome/themes/sky
 
 %files plugin-invaders
 %defattr(644,root,root,755)
@@ -298,10 +330,14 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_datadir}/awesome/lib/naughty.lua
 
-%files plugin-revelation
-%defattr(644,root,root,755)
-%{_datadir}/awesome/lib/revelation.lua
+# %files plugin-revelation
+# %defattr(644,root,root,755)
+# %{_datadir}/awesome/lib/revelation.lua
 
 %files plugin-tabulous
 %defattr(644,root,root,755)
 %{_datadir}/awesome/lib/tabulous.lua
+
+%files plugin-telak
+%defattr(644,root,root,755)
+%{_datadir}/awesome/lib/telak.lua
