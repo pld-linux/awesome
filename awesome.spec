@@ -12,7 +12,7 @@ Source0:	http://awesome.naquadah.org/download/%{name}-%{version}-%{_rc}.tar.bz2
 Source1:	%{name}-xsession.desktop
 Patch0:		%{name}-3.0-lua-files.patch
 URL:		http://awesome.naquadah.org/
-BuildRequires:	ImageMagic-png
+BuildRequires:	ImageMagic-coder-png
 BuildRequires:	asciidoc
 BuildRequires:	cairo-devel
 BuildRequires:	cmake >= 2.6
