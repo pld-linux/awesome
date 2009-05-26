@@ -12,6 +12,7 @@ Source0:	http://awesome.naquadah.org/download/%{name}-%{version}-%{_rc}.tar.bz2
 Source1:	%{name}-xsession.desktop
 Patch0:		%{name}-3.0-lua-files.patch
 URL:		http://awesome.naquadah.org/
+BuildRequires:	ImageMagic-png
 BuildRequires:	asciidoc
 BuildRequires:	cairo-devel
 BuildRequires:	cmake >= 2.6
@@ -311,6 +312,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/awesome/lib/awful
 %{_datadir}/awesome/lib/awful/*.lua
 %{_datadir}/awesome/lib/awful/layout
+%{_datadir}/awesome/lib/awful/widget
 
 %files plugin-beautiful
 %defattr(644,root,root,755)
