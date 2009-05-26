@@ -1,13 +1,14 @@
+%define		_rc	rc4
 Summary:	awesome window manager
 Summary(hu.UTF-8):	awesome ablakkezelő
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
 Name:		awesome
-Version:	3.2.1
-Release:	1
+Version:	3.3
+Release:	0.%{_rc}.0.1
 License:	GPL v2
 Group:		X11/Window Managers
-Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.bz2
-# Source0-md5:	9bae1fface6b4cbbcd4380066845269f
+Source0:	http://awesome.naquadah.org/download/%{name}-%{version}-%{_rc}.tar.bz2
+# Source0-md5:	ccd951458b386d53839b29e76b60607f
 Source1:	%{name}-xsession.desktop
 Patch0:		%{name}-3.0-lua-files.patch
 URL:		http://awesome.naquadah.org/
@@ -21,6 +22,7 @@ BuildRequires:	glib2-devel
 BuildRequires:	gperf
 BuildRequires:	imlib2-devel
 BuildRequires:	libev-devel
+BuildRequires:	libxdg-basedir-devel >= 1.0.1
 BuildRequires:	lua-doc
 BuildRequires:	lua51-devel
 BuildRequires:	pango-devel
@@ -28,7 +30,8 @@ BuildRequires:	pkgconfig >= 0.9.0
 BuildRequires:	readline-devel
 BuildRequires:	rpmbuild(macros) >= 1.293
 BuildRequires:	sed >= 4.0
-BuildRequires:	xcb-util-devel >= 0.3.3
+BuildRequires:	startup-notification-devel >= 0.10
+BuildRequires:	xcb-util-devel >= 0.3.4
 BuildRequires:	xmlto
 BuildRequires:	xorg-lib-libICE-devel
 BuildRequires:	xorg-lib-libXext-devel
@@ -250,7 +253,7 @@ Themes for awesome window manager.
 Témák az awesome ablakkezelőhöz.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}-%{_rc}
 %patch0 -p1
 
 %build
