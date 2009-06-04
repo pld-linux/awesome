@@ -1,14 +1,13 @@
-%define		_rc	rc4
 Summary:	awesome window manager
 Summary(hu.UTF-8):	awesome ablakkezelő
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
 Name:		awesome
 Version:	3.3
-Release:	0.%{_rc}.0.1
+Release:	1
 License:	GPL v2
 Group:		X11/Window Managers
-Source0:	http://awesome.naquadah.org/download/%{name}-%{version}-%{_rc}.tar.bz2
-# Source0-md5:	ccd951458b386d53839b29e76b60607f
+Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.bz2
+# Source0-md5:	0dc5574dc551c6356d8cddc6ce91739c
 Source1:	%{name}-xsession.desktop
 Patch0:		%{name}-3.0-lua-files.patch
 URL:		http://awesome.naquadah.org/
@@ -254,7 +253,7 @@ Themes for awesome window manager.
 Témák az awesome ablakkezelőhöz.
 
 %prep
-%setup -q -n %{name}-%{version}-%{_rc}
+%setup -q
 %patch0 -p1
 
 %build
