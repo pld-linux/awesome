@@ -3,13 +3,14 @@ Summary(hu.UTF-8):	awesome ablakkezelő
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
 Name:		awesome
 Version:	3.3
-Release:	3
+Release:	4
 License:	GPL v2
 Group:		X11/Window Managers
 Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.bz2
 # Source0-md5:	0dc5574dc551c6356d8cddc6ce91739c
 Source1:	%{name}-xsession.desktop
 Patch0:		%{name}-3.0-lua-files.patch
+Patch1:		%{name}-client-bashizm.patch
 URL:		http://awesome.naquadah.org/
 BuildRequires:	ImageMagick-coder-png
 BuildRequires:	asciidoc
@@ -38,6 +39,8 @@ BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXft-devel
 BuildRequires:	xorg-lib-libXinerama-devel
 BuildRequires:	xorg-lib-libXrandr-devel
+Requires:	dbus
+Requires:	rlwrap
 Requires:	startup-notification >= 0.10
 Requires:	xcb-util >= 0.3.5
 Suggests:	%{name}-plugin-awful = %{version}-%{release}
@@ -232,6 +235,7 @@ Zakładki dla zarządcy okien awesome.
 %package plugin-telak
 Summary:	Root window image display library
 Summary(hu.UTF-8):	Root ablak kezeléséhez könyvtár
+Summary(pl.UTF-8):	Biblioteka pozwlająca ustawić tapetę w głównym oknie
 Group:		X11/Window Managers
 Requires:	%{name} = %{version}-%{release}
 Requires:	lua-socket
@@ -242,9 +246,13 @@ Root window image display library.
 %description plugin-telak -l hu.UTF-8
 Root ablak kezeléséhez könyvtár.
 
+%description plugin-telak -l pl.UTF-8
+Biblioteka pozwalająca ustawić tapetę wyświetlaną na głównym oknie.
+
 %package themes
 Summary:	Themes for awesome window manager
 Summary(hu.UTF-8):	Témák az awesome ablakkezelőhöz
+Summary(pl.UTF-8):	Tematy dla zarządcy okien awesome
 Group:		X11/Window Managers
 Requires:	%{name} = %{version}-%{release}
 
@@ -254,9 +262,13 @@ Themes for awesome window manager.
 %description themes -l hu.UTF-8
 Témák az awesome ablakkezelőhöz.
 
+%description themes -l pl.UTF-8
+Dodatkowe "tematy" (definicje wyglądu) zarządcy okien awesome.
+
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %cmake \
