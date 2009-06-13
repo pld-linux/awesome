@@ -34,7 +34,7 @@ index a125869..e99faf3 100755
  }
  
 -while read ${USE_READLINE} -r -p "awesome# " line
-+while read ${USE_READLINE} -r ${READ_OPTIONS} line
++while read ${USE_READLINE} ${READ_OPTIONS} line
  do
      a_dbus_send "$line"
  done
