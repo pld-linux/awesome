@@ -189,33 +189,6 @@ awesome3-ban.
 Biblioteka lua dla zarządcy okien awesome 3 implementująca
 powiadomienia w formie wyskakujących okienek.
 
-%package plugin-revelation
-Summary:	Plugin that allows to bring a view of all your open clients
-Summary(hu.UTF-8):	Revelation egy nézetet hoz létre az összes megnyitott kliensről
-Summary(pl.UTF-8):	Wtyczka do awesome 3 dająca widok wszystkich otwartych okien
-Group:		X11/Window Managers
-Requires:	%{name} = %{version}-%{release}
-
-%description plugin-revelation
-Revelation brings up a view of all your open clients; left-clicking a
-client pops to the first tag that client is visible on and
-raises/focuses the client. In addition, the Enter key pops to the
-currently focused client, and Escape aborts.
-
-%description plugin-revelation -l hu.UTF-8
-Revelation egy nézetet hoz létre az összes megnyitott kliensről; egy
-kliensre bal gombbal kattintva az első olyan cimkére ugorhatsz, ahol a
-kliens látható, és fókuszba hozza a klienst. Az Enter billentyűre a
-fókuszban levő kliensre ugrik, és az Escape billentyűvel megszakítható
-a művelet.
-
-%description plugin-revelation -l pl.UTF-8
-Revelation umożliwia podgląd wszystkich otwartych okien. Kliknięcie
-prawym przyciskiem myszy na okienko przełącza na pierwszy znacznik, na
-którym okno jest widoczne i przywołuje okno na pierwszy plan.
-Dodatkowo klawisz Enter przełącza fokus mięszy oknami a klawisz Esc
-przerywa podgląd okien.
-
 %package plugin-tabulous
 Summary:	Fabulous tabs for awesome window manager
 Summary(hu.UTF-8):	Tab-ok awesome-hoz
@@ -348,10 +321,6 @@ rm -rf $RPM_BUILD_ROOT
 %files plugin-naughty
 %defattr(644,root,root,755)
 %{_datadir}/awesome/lib/naughty.lua
-
-# %files plugin-revelation
-# %defattr(644,root,root,755)
-# %{_datadir}/awesome/lib/revelation.lua
 
 %files plugin-tabulous
 %defattr(644,root,root,755)
