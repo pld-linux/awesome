@@ -3,7 +3,7 @@ Summary(hu.UTF-8):	awesome ablakkezelő
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
 Name:		awesome
 Version:	3.3
-Release:	4
+Release:	5
 License:	GPL v2
 Group:		X11/Window Managers
 Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.bz2
@@ -281,13 +281,13 @@ Dodatkowe "tematy" (definicje wyglądu) zarządcy okien awesome.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_datadir}/xsessions,%{_docdir}/%{name}-doc-%{version}}
+install -d $RPM_BUILD_ROOT{%{_datadir}/xsessions,%{_docdir}/%{name}-%{version}}
+install AUTHORS BUGS README STYLE $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 install %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/xsessions/%{name}.desktop
 
-mv $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}/luadoc $RPM_BUILD_ROOT%{_docdir}/%{name}-doc-%{version}/luadoc
 for file in $(%{__find} $RPM_BUILD_ROOT%{_datadir}/%{name} -iname "*.in"); do
 	%{__rm} ${file}
 done
@@ -297,7 +297,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS BUGS README STYLE
+%doc %{_docdir}/%{name}-%{version}
+%exclude %{_docdir}/%{name}-%{version}/luadoc
 %attr(755,root,root) %{_bindir}/%{name}
 %attr(755,root,root) %{_bindir}/%{name}-client
 %attr(755,root,root) %{_bindir}/awsetbg
@@ -312,7 +313,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files doc
 %defattr(644,root,root,755)
-%{_docdir}/%{name}-doc-%{version}
+%doc %{_docdir}/%{name}-%{version}/luadoc
 
 %files example-config
 %defattr(644,root,root,755)
