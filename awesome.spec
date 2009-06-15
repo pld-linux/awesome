@@ -72,14 +72,20 @@ kontrolę nad swoim środowiskiem graficznym.
 
 %package client
 Summary:	awesome window manager command line client
+Summary(hu.UTF-8):	parancssoros kliens az awesome ablakkezelőhöz
 Summary(pl.UTF-8):	klient zarządcy okien awesome
 Group:		Applications
 Requires:	dbus
 Requires:	rlwrap
 
 %description client
-awesome-client is command line utility (in fact shell script) for executing
-an arbitrary lua code in working awesome window manager instance.
+awesome-client is command line utility (in fact shell script) for
+executing an arbitrary lua code in working awesome window manager
+instance.
+
+%description client -l hu.UTF-8
+awesome-client egy parancssoros eszköz (lényegében egy shell script)
+tetszőleges lua kód futtatásához egy működő awesome ablakkezelőben.
 
 %description client -l pl.UTF-8
 awesome-client to skrypt powłoki pozwalający wykonać dowolny kod lua w
