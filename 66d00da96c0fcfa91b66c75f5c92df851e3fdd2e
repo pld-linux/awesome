@@ -1,0 +1,5 @@
+- split awesome-client to separate subpackage.
+  awesome-client speaks to awesome using DBUS so in theory it may speak
+  to awesome on remote machine. In such case it makes sense to install
+  awesome-client only.
+- rel 6
