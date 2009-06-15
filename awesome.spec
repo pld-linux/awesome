@@ -74,7 +74,7 @@ kontrolę nad swoim środowiskiem graficznym.
 Summary:	awesome window manager command line client
 Summary(hu.UTF-8):	parancssoros kliens az awesome ablakkezelőhöz
 Summary(pl.UTF-8):	klient zarządcy okien awesome
-Group:		Applications
+Group:		X11/Window Managers
 Requires:	dbus
 Requires:	rlwrap
 
