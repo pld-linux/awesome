@@ -3,7 +3,7 @@ Summary(hu.UTF-8):	awesome ablakkezelő
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
 Name:		awesome
 Version:	3.3
-Release:	5
+Release:	6
 License:	GPL v2
 Group:		X11/Window Managers
 Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.bz2
@@ -39,8 +39,7 @@ BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXft-devel
 BuildRequires:	xorg-lib-libXinerama-devel
 BuildRequires:	xorg-lib-libXrandr-devel
-Requires:	dbus
-Requires:	rlwrap
+Requires:	%{name}-client = %{version}-%{release}
 Requires:	startup-notification >= 0.10
 Requires:	xcb-util >= 0.3.5
 Suggests:	%{name}-plugin-awful = %{version}-%{release}
@@ -70,6 +69,21 @@ w program języka skryptowego lua. Awesome został zaprojektowany z
 myślą o bardziej zaawansowanych użytkownikach: programistach oraz
 innych pracujących na codzień z komputerami, którzy chcą mieć dużą
 kontrolę nad swoim środowiskiem graficznym.
+
+%package client
+Summary:	awesome window manager command line client
+Summary(pl.UTF-8):	klient zarządcy okien awesome
+Group:		Applications
+Requires:	dbus
+Requires:	rlwrap
+
+%description client
+awesome-client is command line utility (in fact shell script) for executing
+an arbitrary lua code in working awesome window manager instance.
+
+%description client -l pl.UTF-8
+awesome-client to skrypt powłoki pozwalający wykonać dowolny kod lua w
+działającej instancji zarządcy okien awesome.
 
 %package doc
 Summary:	awesome window manager API documentation
@@ -273,16 +287,20 @@ rm -rf $RPM_BUILD_ROOT
 %doc %{_docdir}/%{name}-%{version}
 %exclude %{_docdir}/%{name}-%{version}/luadoc
 %attr(755,root,root) %{_bindir}/%{name}
-%attr(755,root,root) %{_bindir}/%{name}-client
 %attr(755,root,root) %{_bindir}/awsetbg
 %dir %{_datadir}/%{name}/lib
 %{_datadir}/%{name}/lib/capi.lua
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/icons
 %{_datadir}/xsessions/%{name}.desktop
-%{_mandir}/man1/%{name}*
-%{_mandir}/man1/awsetbg*
-%{_mandir}/man5/%{name}*
+%{_mandir}/man1/%{name}.1*
+%{_mandir}/man1/awsetbg.1*
+%{_mandir}/man5/awesomerc.5*
+
+%files client
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/%{name}-client
+%{_mandir}/man1/%{name}-client.1*
 
 %files doc
 %defattr(644,root,root,755)
