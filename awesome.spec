@@ -74,7 +74,7 @@ kontrolę nad swoim środowiskiem graficznym.
 Summary:	awesome window manager command line client
 Summary(hu.UTF-8):	parancssoros kliens az awesome ablakkezelőhöz
 Summary(pl.UTF-8):	klient zarządcy okien awesome
-Group:		X11/Window Managers
+Group:		X11/Window Managers/Tools
 Requires:	dbus
 Requires:	rlwrap
 
@@ -135,7 +135,7 @@ jest dobrym punktem wyjścia dla osób nie używających wcześniej awesome
 Summary:	awful plugin for awesome window manager
 Summary(hu.UTF-8):	awful plugin az awesome ablakkezelőhöz
 Summary(pl.UTF-8):	Wtyczka awful dla zarządcy okien awesome
-Group:		X11/Window Managers
+Group:		X11/Window Managers/Tools
 Requires:	%{name} = %{version}-%{release}
 
 %description plugin-awful
@@ -153,7 +153,7 @@ awesome.
 Summary:	Theme library for awesome window manager
 Summary(hu.UTF-8):	Theme könyvtár az awesome ablakkezelőhöz
 Summary(pl.UTF-8):	Biblioteka styli dla zarządcy okien awesome
-Group:		X11/Window Managers
+Group:		X11/Window Managers/Tools
 Requires:	%{name} = %{version}-%{release}
 Suggests:	WallpaperChanger
 
@@ -170,7 +170,7 @@ Biblioteka styli dla zarządcy okien awesome.
 Summary:	Awesome Invaders game
 Summary(hu.UTF-8):	Awesome Invaders játék
 Summary(pl.UTF-8):	Gra Awesome Invaders
-Group:		X11/Window Managers
+Group:		X11/Window Managers/Tools
 Requires:	%{name} = %{version}-%{release}
 Requires:	%{name}-plugin-awful = %{version}-%{release}
 Requires:	%{name}-plugin-beautiful = %{version}-%{release}
@@ -192,7 +192,7 @@ Lua zarządcy okien awesome 3.
 Summary:	Naughty is a lua library that implements popup notifications for awesome 3
 Summary(hu.UTF-8):	Naughty egy lua-könyvtár, amely felugró értesítéseket tesz lehetővé awesome3-ban
 Summary(pl.UTF-8):	Powiadomienia w postaci wyskakujących okienek dla awesome 3
-Group:		X11/Window Managers
+Group:		X11/Window Managers/Tools
 Requires:	%{name} = %{version}-%{release}
 Requires:	%{name}-plugin-awful = %{version}-%{release}
 Requires:	%{name}-plugin-beautiful = %{version}-%{release}
@@ -213,7 +213,7 @@ powiadomienia w formie wyskakujących okienek.
 Summary:	Fabulous tabs for awesome window manager
 Summary(hu.UTF-8):	Tab-ok awesome-hoz
 Summary(pl.UTF-8):	Zakładki dla zarządcy okien awesome
-Group:		X11/Window Managers
+Group:		X11/Window Managers/Tools
 Requires:	%{name} = %{version}-%{release}
 
 %description plugin-tabulous
@@ -229,7 +229,7 @@ Zakładki dla zarządcy okien awesome.
 Summary:	Root window image display library
 Summary(hu.UTF-8):	Root ablak kezeléséhez könyvtár
 Summary(pl.UTF-8):	Biblioteka pozwlająca ustawić tapetę w głównym oknie
-Group:		X11/Window Managers
+Group:		X11/Window Managers/Tools
 Requires:	%{name} = %{version}-%{release}
 Requires:	lua-socket
 
@@ -246,7 +246,7 @@ Biblioteka pozwalająca ustawić tapetę wyświetlaną na głównym oknie.
 Summary:	Themes for awesome window manager
 Summary(hu.UTF-8):	Témák az awesome ablakkezelőhöz
 Summary(pl.UTF-8):	Tematy dla zarządcy okien awesome
-Group:		X11/Window Managers
+Group:		X11/Window Managers/Tools
 Requires:	%{name} = %{version}-%{release}
 
 %description themes
