@@ -295,9 +295,9 @@ rm -rf $RPM_BUILD_ROOT
 %exclude %{_docdir}/%{name}-%{version}/luadoc
 %attr(755,root,root) %{_bindir}/%{name}
 %attr(755,root,root) %{_bindir}/awsetbg
+%dir %{_datadir}/%{name}
 %dir %{_datadir}/%{name}/lib
 %{_datadir}/%{name}/lib/capi.lua
-%dir %{_datadir}/%{name}
 %{_datadir}/%{name}/icons
 %{_datadir}/xsessions/%{name}.desktop
 %{_mandir}/man1/%{name}.1*
