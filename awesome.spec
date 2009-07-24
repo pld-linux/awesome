@@ -42,7 +42,6 @@ BuildRequires:	xorg-lib-libXrandr-devel
 Requires:	%{name}-client = %{version}-%{release}
 Requires:	startup-notification >= 0.10
 Requires:	xcb-util >= 0.3.5
-Suggests:	%{name}-plugin-awful = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sysconfdir	/etc/X11
