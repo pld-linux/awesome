@@ -3,7 +3,7 @@ Summary(hu.UTF-8):	awesome ablakkezelő
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
 Name:		awesome
 Version:	3.3.2
-Release:	0.1
+Release:	1
 License:	GPL v2
 Group:		X11/Window Managers
 Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.bz2
@@ -11,6 +11,7 @@ Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.bz2
 Source1:	%{name}-xsession.desktop
 Patch0:		%{name}-3.0-lua-files.patch
 Patch1:		%{name}-client-bashizm.patch
+Patch2:		%{name}-xmlto.patch
 URL:		http://awesome.naquadah.org/
 BuildRequires:	ImageMagick-coder-png
 BuildRequires:	asciidoc
@@ -71,8 +72,8 @@ kontrolę nad swoim środowiskiem graficznym.
 
 %package client
 Summary:	awesome window manager command line client
-Summary(hu.UTF-8):	parancssoros kliens az awesome ablakkezelőhöz
-Summary(pl.UTF-8):	klient zarządcy okien awesome
+Summary(hu.UTF-8):	Parancssoros kliens az awesome ablakkezelőhöz
+Summary(pl.UTF-8):	Klient zarządcy okien awesome
 Group:		X11/Window Managers/Tools
 Requires:	dbus
 Requires:	rlwrap
@@ -262,6 +263,7 @@ Dodatkowe "tematy" (definicje wyglądu) zarządcy okien awesome.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %cmake \
