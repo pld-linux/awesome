@@ -2,12 +2,12 @@ Summary:	awesome window manager
 Summary(hu.UTF-8):	awesome ablakkezelő
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
 Name:		awesome
-Version:	3.3.2
-Release:	2
+Version:	3.3.3
+Release:	0.1
 License:	GPL v2
 Group:		X11/Window Managers
 Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.bz2
-# Source0-md5:	39cdf5e86f761c3ca73f0b2b6427a961
+# Source0-md5:	528e059e77655bd28f259b1379412a1e
 Source1:	%{name}-xsession.desktop
 Patch0:		%{name}-3.0-lua-files.patch
 Patch1:		%{name}-client-bashizm.patch
@@ -33,7 +33,7 @@ BuildRequires:	readline-devel
 BuildRequires:	rpmbuild(macros) >= 1.293
 BuildRequires:	sed >= 4.0
 BuildRequires:	startup-notification-devel >= 0.10
-BuildRequires:	xcb-util-devel >= 0.3.5
+BuildRequires:	xcb-util-devel >= 0.3.6
 BuildRequires:	xmlto
 BuildRequires:	xorg-lib-libICE-devel
 BuildRequires:	xorg-lib-libXext-devel
