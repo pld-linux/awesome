@@ -1,17 +1,19 @@
+
+%define		_rc	rc1
+
 Summary:	awesome window manager
 Summary(hu.UTF-8):	awesome ablakkezelő
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
 Name:		awesome
-Version:	3.3.4
-Release:	1
+Version:	3.4
+Release:	0.%{_rc}.1
 License:	GPL v2
 Group:		X11/Window Managers
-Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.bz2
-# Source0-md5:	a8e20a5af2cb07191416c2b8198b450c
+Source0:	http://awesome.naquadah.org/download/%{name}-%{version}-%{_rc}.tar.bz2
+# Source0-md5:	eb5afe75e21ead115e4de7eba1bb5079
 Source1:	%{name}-xsession.desktop
 Patch0:		%{name}-3.0-lua-files.patch
-Patch1:		%{name}-client-bashizm.patch
-Patch2:		%{name}-xmlto.patch
+Patch1:		%{name}-xmlto.patch
 URL:		http://awesome.naquadah.org/
 BuildRequires:	ImageMagick-coder-png
 BuildRequires:	asciidoc
@@ -166,28 +168,6 @@ Theme könyvtár az awesome ablakkezelőhöz.
 %description plugin-beautiful -l pl.UTF-8
 Biblioteka styli dla zarządcy okien awesome.
 
-%package plugin-invaders
-Summary:	Awesome Invaders game
-Summary(hu.UTF-8):	Awesome Invaders játék
-Summary(pl.UTF-8):	Gra Awesome Invaders
-Group:		X11/Window Managers/Tools
-Requires:	%{name} = %{version}-%{release}
-Requires:	%{name}-plugin-awful = %{version}-%{release}
-Requires:	%{name}-plugin-beautiful = %{version}-%{release}
-Requires:	ImageMagick
-
-%description plugin-invaders
-Awesome Invaders is, as the name says, an implementation of Space
-Invaders using awesome 3's Lua interface.
-
-%description plugin-invaders -l hu.UTF-8
-Awesome Invaders, ahogy a neve is mutatja, a Space Invaders
-megvalósítása az awesome 3 lua interfészét használva.
-
-%description plugin-invaders -l pl.UTF-8
-Awesome Invaders jest grą Space Invaders zaimplementowaną w intefejsie
-Lua zarządcy okien awesome 3.
-
 %package plugin-naughty
 Summary:	Naughty is a lua library that implements popup notifications for awesome 3
 Summary(hu.UTF-8):	Naughty egy lua-könyvtár, amely felugró értesítéseket tesz lehetővé awesome3-ban
@@ -210,39 +190,6 @@ awesome3-ban.
 Biblioteka lua dla zarządcy okien awesome 3 implementująca
 powiadomienia w formie wyskakujących okienek.
 
-%package plugin-tabulous
-Summary:	Fabulous tabs for awesome window manager
-Summary(hu.UTF-8):	Tab-ok awesome-hoz
-Summary(pl.UTF-8):	Zakładki dla zarządcy okien awesome
-Group:		X11/Window Managers/Tools
-Requires:	%{name} = %{version}-%{release}
-
-%description plugin-tabulous
-Fabulous tabs for awesome.
-
-%description plugin-tabulous -l hu.UTF-8
-Tab-ok awesome-hoz.
-
-%description plugin-tabulous -l pl.UTF-8
-Zakładki dla zarządcy okien awesome.
-
-%package plugin-telak
-Summary:	Root window image display library
-Summary(hu.UTF-8):	Root ablak kezeléséhez könyvtár
-Summary(pl.UTF-8):	Biblioteka pozwlająca ustawić tapetę w głównym oknie
-Group:		X11/Window Managers/Tools
-Requires:	%{name} = %{version}-%{release}
-Requires:	lua-socket
-
-%description plugin-telak
-Root window image display library.
-
-%description plugin-telak -l hu.UTF-8
-Root ablak kezeléséhez könyvtár.
-
-%description plugin-telak -l pl.UTF-8
-Biblioteka pozwalająca ustawić tapetę wyświetlaną na głównym oknie.
-
 %package themes
 Summary:	Themes for awesome window manager
 Summary(hu.UTF-8):	Témák az awesome ablakkezelőhöz
@@ -260,10 +207,9 @@ Témák az awesome ablakkezelőhöz.
 Dodatkowe "tematy" (definicje wyglądu) zarządcy okien awesome.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}-%{_rc}
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 %build
 %cmake \
@@ -298,7 +244,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/awsetbg
 %dir %{_datadir}/%{name}
 %dir %{_datadir}/%{name}/lib
-%{_datadir}/%{name}/lib/capi.lua
 %{_datadir}/%{name}/icons
 %{_datadir}/xsessions/%{name}.desktop
 %{_mandir}/man1/%{name}.1*
@@ -325,6 +270,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/awesome/lib/awful
 %{_datadir}/awesome/lib/awful/*.lua
 %{_datadir}/awesome/lib/awful/layout
+%{_datadir}/awesome/lib/awful/mouse
 %{_datadir}/awesome/lib/awful/widget
 
 %files plugin-beautiful
@@ -338,20 +284,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/awesome/themes/default
 %{_datadir}/awesome/themes/sky
 
-%files plugin-invaders
-%defattr(644,root,root,755)
-%{_datadir}/awesome/lib/invaders.lua
-%dir %{_datadir}/awesome/icons/invaders
-%{_datadir}/awesome/icons/invaders/*.png
-
 %files plugin-naughty
 %defattr(644,root,root,755)
 %{_datadir}/awesome/lib/naughty.lua
-
-%files plugin-tabulous
-%defattr(644,root,root,755)
-%{_datadir}/awesome/lib/tabulous.lua
-
-%files plugin-telak
-%defattr(644,root,root,755)
-%{_datadir}/awesome/lib/telak.lua
