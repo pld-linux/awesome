@@ -26,6 +26,7 @@ BuildRequires:	glib2-devel
 BuildRequires:	gperf
 BuildRequires:	imlib2-devel
 BuildRequires:	libev-devel
+BuildRequires:	libxcb-devel >= 1.4
 BuildRequires:	libxdg-basedir-devel >= 1.0.1
 BuildRequires:	lua-doc
 BuildRequires:	lua51-devel
@@ -42,6 +43,7 @@ BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXft-devel
 BuildRequires:	xorg-lib-libXinerama-devel
 BuildRequires:	xorg-lib-libXrandr-devel
+BuildRequires:	xorg-proto-xproto-devel >= 7.0.15
 Requires:	%{name}-client = %{version}-%{release}
 Requires:	startup-notification >= 0.10
 Requires:	xcb-util >= 0.3.6
