@@ -1,5 +1,5 @@
 
-%define		_rc	rc1
+%define		_rc	rc2
 
 Summary:	awesome window manager
 Summary(hu.UTF-8):	awesome ablakkezelő
@@ -10,7 +10,7 @@ Release:	0.%{_rc}.1
 License:	GPL v2
 Group:		X11/Window Managers
 Source0:	http://awesome.naquadah.org/download/%{name}-%{version}-%{_rc}.tar.bz2
-# Source0-md5:	eb5afe75e21ead115e4de7eba1bb5079
+# Source0-md5:	6a9530faa2af8f1c244132a55a709e17
 Source1:	%{name}-xsession.desktop
 Patch0:		%{name}-3.0-lua-files.patch
 Patch1:		%{name}-xmlto.patch
