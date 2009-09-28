@@ -118,7 +118,6 @@ Group:		Documentation
 Requires:	%{name} = %{version}-%{release}
 Requires:	%{name}-plugin-awful = %{version}-%{release}
 Requires:	%{name}-plugin-beautiful = %{version}-%{release}
-Requires:	%{name}-plugin-tabulous = %{version}-%{release}
 Requires:	%{name}-themes = %{version}-%{release}
 
 %description example-config
