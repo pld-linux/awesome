@@ -192,20 +192,56 @@ Biblioteka lua dla zarządcy okien awesome 3 implementująca
 powiadomienia w formie wyskakujących okienek.
 
 %package themes
-Summary:	Themes for awesome window manager
-Summary(hu.UTF-8):	Témák az awesome ablakkezelőhöz
+Summary:	Themes for awesome window manager (metapackage)
+Summary(hu.UTF-8):	Témák az awesome ablakkezelőhöz (metacsomag)
 Summary(pl.UTF-8):	Tematy dla zarządcy okien awesome
 Group:		X11/Window Managers/Tools
 Requires:	%{name} = %{version}-%{release}
+Requires:	%{name}-themes-default = %{version}-%{release}
+Requires:	%{name}-themes-sky = %{version}-%{release}
+Requires:	%{name}-themes-zenburn = %{version}-%{release}
 
 %description themes
-Themes for awesome window manager.
+Themes for awesome window manager (metapackage).
 
 %description themes -l hu.UTF-8
-Témák az awesome ablakkezelőhöz.
+Témák az awesome ablakkezelőhöz (metacsomag).
 
 %description themes -l pl.UTF-8
 Dodatkowe "tematy" (definicje wyglądu) zarządcy okien awesome.
+
+%package themes-default
+Summary:	Default theme for awesome window manager
+Summary(hu.UTF-8):	Alapértelmezett téma az awesome ablakkezelőhöz
+Group:		X11/Window Managers/Tools
+
+%description themes-default
+Default theme for awesome window manager.
+
+%description themes-default -l hu.UTF-8
+Alapértelmezett téma az awesome ablakkezelőhöz.
+
+%package themes-sky
+Summary:	Sky theme for awesome window manager
+Summary(hu.UTF-8):	Sky téma az awesome ablakkezelőhöz
+Group:		X11/Window Managers/Tools
+
+%description themes-sky
+Sky theme for awesome window manager.
+
+%description themes-sky -l hu.UTF-8
+Sky téma az awesome ablakkezelőhöz.
+
+%package themes-zenburn
+Summary:	Zenburn theme for awesome window manager
+Summary(hu.UTF-8):	Zenburn téma az awesome ablakkezelőhöz
+Group:		X11/Window Managers/Tools
+
+%description themes-zenburn
+Zenburn theme for awesome window manager.
+
+%description themes-zenburn -l hu.UTF-8
+Zenburn téma az awesome ablakkezelőhöz.
 
 %prep
 %setup -q -n %{name}-%{version}-%{_rc}
@@ -281,8 +317,18 @@ rm -rf $RPM_BUILD_ROOT
 
 %files themes
 %defattr(644,root,root,755)
+
+%files themes-default
+%defattr(644,root,root,755)
 %{_datadir}/awesome/themes/default
+
+%files themes-sky
+%defattr(644,root,root,755)
 %{_datadir}/awesome/themes/sky
+
+%files themes-zenburn
+%defattr(644,root,root,755)
+%{_datadir}/awesome/themes/zenburn
 
 %files plugin-naughty
 %defattr(644,root,root,755)
