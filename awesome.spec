@@ -1,20 +1,19 @@
 
-%define		_rc	rc2
+%define		_rc	rc3
 
 Summary:	awesome window manager
 Summary(hu.UTF-8):	awesome ablakkezelő
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
 Name:		awesome
 Version:	3.4
-Release:	0.%{_rc}.2
+Release:	0.%{_rc}.1
 License:	GPL v2
 Group:		X11/Window Managers
 Source0:	http://awesome.naquadah.org/download/%{name}-%{version}-%{_rc}.tar.bz2
-# Source0-md5:	6a9530faa2af8f1c244132a55a709e17
+# Source0-md5:	5fd2e01c5bc7d5f4765731a05fea8691
 Source1:	%{name}-xsession.desktop
 Patch0:		%{name}-3.0-lua-files.patch
 Patch1:		%{name}-xmlto.patch
-Patch2:		%{name}-magnifier.patch
 URL:		http://awesome.naquadah.org/
 BuildRequires:	ImageMagick-coder-png
 BuildRequires:	asciidoc
@@ -46,6 +45,8 @@ BuildRequires:	xorg-lib-libXinerama-devel
 BuildRequires:	xorg-lib-libXrandr-devel
 BuildRequires:	xorg-proto-xproto-devel >= 7.0.15
 Requires:	%{name}-client = %{version}-%{release}
+Requires:	%{name}-plugin-awful = %{version}-%{release}
+Requires:	%{name}-plugin-beautiful = %{version}-%{release}
 Requires:	startup-notification >= 0.10
 Requires:	xcb-util >= 0.3.6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -140,7 +141,6 @@ Summary:	awful plugin for awesome window manager
 Summary(hu.UTF-8):	awful plugin az awesome ablakkezelőhöz
 Summary(pl.UTF-8):	Wtyczka awful dla zarządcy okien awesome
 Group:		X11/Window Managers/Tools
-Requires:	%{name} = %{version}-%{release}
 
 %description plugin-awful
 AWesome Functions very UsefuL: awful plugin for awesome window
@@ -158,7 +158,6 @@ Summary:	Theme library for awesome window manager
 Summary(hu.UTF-8):	Theme könyvtár az awesome ablakkezelőhöz
 Summary(pl.UTF-8):	Biblioteka styli dla zarządcy okien awesome
 Group:		X11/Window Managers/Tools
-Requires:	%{name} = %{version}-%{release}
 Suggests:	WallpaperChanger
 
 %description plugin-beautiful
@@ -212,7 +211,6 @@ Dodatkowe "tematy" (definicje wyglądu) zarządcy okien awesome.
 %setup -q -n %{name}-%{version}-%{_rc}
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 %build
 %cmake \
