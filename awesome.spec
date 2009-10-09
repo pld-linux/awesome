@@ -46,7 +46,6 @@ BuildRequires:	xorg-lib-libXrandr-devel
 BuildRequires:	xorg-proto-xproto-devel >= 7.0.15
 Requires:	%{name}-client = %{version}-%{release}
 Requires:	%{name}-plugin-awful = %{version}-%{release}
-Requires:	%{name}-plugin-beautiful = %{version}-%{release}
 Requires:	startup-notification >= 0.10
 Requires:	xcb-util >= 0.3.6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -141,6 +140,7 @@ Summary:	awful plugin for awesome window manager
 Summary(hu.UTF-8):	awful plugin az awesome ablakkezelőhöz
 Summary(pl.UTF-8):	Wtyczka awful dla zarządcy okien awesome
 Group:		X11/Window Managers/Tools
+Requires:	%{name}-plugin-beautiful = %{version}-%{release}
 
 %description plugin-awful
 AWesome Functions very UsefuL: awful plugin for awesome window
@@ -276,12 +276,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files plugin-beautiful
 %defattr(644,root,root,755)
+%dir %{_datadir}/awesome/themes
 %{_datadir}/awesome/lib/beautiful.lua
-%{_datadir}/awesome/themes
 
 %files themes
 %defattr(644,root,root,755)
-%dir %{_datadir}/awesome/themes
 %{_datadir}/awesome/themes/default
 %{_datadir}/awesome/themes/sky
 
