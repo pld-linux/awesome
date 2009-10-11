@@ -1,0 +1,4 @@
+- awful and beautiful merged into main awesome package. They are integral
+  parts of awesome. There is no better way to avoid dependency loop and
+  splitting them is pointless.
+- rel 0.%{_rc}.2
