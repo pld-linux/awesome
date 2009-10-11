@@ -6,7 +6,7 @@ Summary(hu.UTF-8):	awesome ablakkezelő
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
 Name:		awesome
 Version:	3.4
-Release:	0.%{_rc}.1
+Release:	0.%{_rc}.2
 License:	GPL v2
 Group:		X11/Window Managers
 Source0:	http://awesome.naquadah.org/download/%{name}-%{version}-%{_rc}.tar.bz2
@@ -45,9 +45,10 @@ BuildRequires:	xorg-lib-libXinerama-devel
 BuildRequires:	xorg-lib-libXrandr-devel
 BuildRequires:	xorg-proto-xproto-devel >= 7.0.15
 Requires:	%{name}-client = %{version}-%{release}
-Requires:	%{name}-plugin-awful = %{version}-%{release}
 Requires:	startup-notification >= 0.10
 Requires:	xcb-util >= 0.3.6
+Obsoletes:	awesome-plugin-awful
+Obsoletes:	awesome-plugin-beautiful
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sysconfdir	/etc/X11
@@ -117,8 +118,6 @@ Summary(hu.UTF-8):	Egy alap/példa konfig az awesome ablakkezelőhöz
 Summary(pl.UTF-8):	Przykładowy plik konfiguracyjny dla zarządcy okien awesome
 Group:		Documentation
 Requires:	%{name} = %{version}-%{release}
-Requires:	%{name}-plugin-awful = %{version}-%{release}
-Requires:	%{name}-plugin-beautiful = %{version}-%{release}
 Requires:	%{name}-themes = %{version}-%{release}
 
 %description example-config
@@ -135,48 +134,12 @@ Przykładowy plik konfiguracyjny dla zarządcy okien awesome. Ten plik
 jest dobrym punktem wyjścia dla osób nie używających wcześniej awesome
 3.x.
 
-%package plugin-awful
-Summary:	awful plugin for awesome window manager
-Summary(hu.UTF-8):	awful plugin az awesome ablakkezelőhöz
-Summary(pl.UTF-8):	Wtyczka awful dla zarządcy okien awesome
-Group:		X11/Window Managers/Tools
-Requires:	%{name}-plugin-beautiful = %{version}-%{release}
-
-%description plugin-awful
-AWesome Functions very UsefuL: awful plugin for awesome window
-manager.
-
-%description plugin-awful -l hu.UTF-8
-AWesome Functions very UsefuL: awful plugin az awesome ablakkezelőhöz.
-
-%description plugin-awful -l pl.UTF-8
-AWesome Functions very UsefuL: wtyczka awful dla zarządcy okien
-awesome.
-
-%package plugin-beautiful
-Summary:	Theme library for awesome window manager
-Summary(hu.UTF-8):	Theme könyvtár az awesome ablakkezelőhöz
-Summary(pl.UTF-8):	Biblioteka styli dla zarządcy okien awesome
-Group:		X11/Window Managers/Tools
-Suggests:	WallpaperChanger
-
-%description plugin-beautiful
-Theme library for awesome window manager.
-
-%description plugin-beautiful -l hu.UTF-8
-Theme könyvtár az awesome ablakkezelőhöz.
-
-%description plugin-beautiful -l pl.UTF-8
-Biblioteka styli dla zarządcy okien awesome.
-
 %package plugin-naughty
 Summary:	Naughty is a lua library that implements popup notifications for awesome 3
 Summary(hu.UTF-8):	Naughty egy lua-könyvtár, amely felugró értesítéseket tesz lehetővé awesome3-ban
 Summary(pl.UTF-8):	Powiadomienia w postaci wyskakujących okienek dla awesome 3
 Group:		X11/Window Managers/Tools
 Requires:	%{name} = %{version}-%{release}
-Requires:	%{name}-plugin-awful = %{version}-%{release}
-Requires:	%{name}-plugin-beautiful = %{version}-%{release}
 Provides:	dbus(org.freedesktop.Notifications)
 
 %description plugin-naughty
@@ -287,6 +250,17 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/awsetbg.1*
 %{_mandir}/man5/awesomerc.5*
 
+# plugin-awful
+%dir %{_datadir}/awesome/lib/awful
+%{_datadir}/awesome/lib/awful/*.lua
+%{_datadir}/awesome/lib/awful/layout
+%{_datadir}/awesome/lib/awful/mouse
+%{_datadir}/awesome/lib/awful/widget
+
+# plugin-beautiful
+%dir %{_datadir}/awesome/themes
+%{_datadir}/awesome/lib/beautiful.lua
+
 %files client
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/%{name}-client
@@ -301,19 +275,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_sysconfdir}/xdg
 %dir %{_sysconfdir}/xdg/awesome
 %{_sysconfdir}/xdg/awesome/*
-
-%files plugin-awful
-%defattr(644,root,root,755)
-%dir %{_datadir}/awesome/lib/awful
-%{_datadir}/awesome/lib/awful/*.lua
-%{_datadir}/awesome/lib/awful/layout
-%{_datadir}/awesome/lib/awful/mouse
-%{_datadir}/awesome/lib/awful/widget
-
-%files plugin-beautiful
-%defattr(644,root,root,755)
-%dir %{_datadir}/awesome/themes
-%{_datadir}/awesome/lib/beautiful.lua
 
 %files themes
 %defattr(644,root,root,755)
