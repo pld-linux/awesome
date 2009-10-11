@@ -47,6 +47,8 @@ BuildRequires:	xorg-proto-xproto-devel >= 7.0.15
 Requires:	%{name}-client = %{version}-%{release}
 Requires:	startup-notification >= 0.10
 Requires:	xcb-util >= 0.3.6
+Provides:	awesome-plugin-awful
+Provides:	awesome-plugin-beautiful
 Obsoletes:	awesome-plugin-awful
 Obsoletes:	awesome-plugin-beautiful
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
