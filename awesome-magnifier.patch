@@ -9,7 +9,7 @@ index 2d4a526..74a2398 100644
 +    -- If focused window is floating, value of focus will change. We want to
 +    -- save original value of focus and raise() it after seting geometry of
 +    -- other clients.
-+    originalfocus = focus
++    local originalfocus = focus
 +
      -- If focused window is not tiled, take the first one which is tiled.
      if client.floating.get(focus) then
