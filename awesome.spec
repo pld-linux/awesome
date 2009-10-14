@@ -6,7 +6,7 @@ Summary(hu.UTF-8):	awesome ablakkezelő
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
 Name:		awesome
 Version:	3.4
-Release:	0.%{_rc}.2
+Release:	0.%{_rc}.3
 License:	GPL v2
 Group:		X11/Window Managers
 Source0:	http://awesome.naquadah.org/download/%{name}-%{version}-%{_rc}.tar.bz2
@@ -14,6 +14,7 @@ Source0:	http://awesome.naquadah.org/download/%{name}-%{version}-%{_rc}.tar.bz2
 Source1:	%{name}-xsession.desktop
 Patch0:		%{name}-3.0-lua-files.patch
 Patch1:		%{name}-xmlto.patch
+Patch2:		%{name}-magnifier.patch
 URL:		http://awesome.naquadah.org/
 BuildRequires:	ImageMagick-coder-png
 BuildRequires:	asciidoc
@@ -211,6 +212,7 @@ Zenburn téma az awesome ablakkezelőhöz.
 %setup -q -n %{name}-%{version}-%{_rc}
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %cmake \
