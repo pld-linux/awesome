@@ -44,7 +44,6 @@ BuildRequires:	xorg-lib-libXft-devel
 BuildRequires:	xorg-lib-libXinerama-devel
 BuildRequires:	xorg-lib-libXrandr-devel
 BuildRequires:	xorg-proto-xproto-devel >= 7.0.15
-Requires:	%{name}-client = %{version}-%{release}
 Requires:	startup-notification >= 0.10
 Requires:	xcb-util >= 0.3.6
 Provides:	awesome-plugin-awful
