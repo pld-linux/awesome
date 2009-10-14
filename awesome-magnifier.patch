@@ -1,0 +1,36 @@
+diff --git a/lib/awful/layout/suit/magnifier.lua.in b/lib/awful/layout/suit/magnifier.lua.in
+index 2d4a526..74a2398 100644
+--- a/lib/awful/layout/suit/magnifier.lua.in
++++ b/lib/awful/layout/suit/magnifier.lua.in
+@@ -34,6 +34,11 @@ function arrange(p)
+         fidx = 1
+     end
+ 
++    -- If focused window is floating, value of focus will change. We want to
++    -- save original value of focus and raise() it after seting geometry of
++    -- other clients.
++    originalfocus = focus
++
+     -- If focused window is not tiled, take the first one which is tiled.
+     if client.floating.get(focus) then
+         focus = cls[1]
+@@ -56,7 +61,6 @@ function arrange(p)
+         geometry.height = area.height
+     end
+     focus:geometry(geometry)
+-    focus:raise()
+ 
+     if #cls > 1 then
+         geometry.x = area.x
+@@ -87,6 +91,11 @@ function arrange(p)
+             geometry.y = geometry.y + geometry.height
+         end
+     end
++
++    -- Raise primary tiled window and then the originally focused window. If
++    -- there was no floating window it is the same window.
++    focus:raise()
++    originalfocus:raise()
+ end
+ 
+ name = "magnifier"
