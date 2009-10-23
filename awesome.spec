@@ -118,7 +118,7 @@ Summary(hu.UTF-8):	Egy alap/példa konfig az awesome ablakkezelőhöz
 Summary(pl.UTF-8):	Przykładowy plik konfiguracyjny dla zarządcy okien awesome
 Group:		Documentation
 Requires:	%{name} = %{version}-%{release}
-Requires:	%{name}-themes = %{version}-%{release}
+Requires:	%{name}-themes-default = %{version}-%{release}
 
 %description example-config
 Example config for awesome window manager. It can be a good starting
