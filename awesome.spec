@@ -213,7 +213,7 @@ Zenburn téma az awesome ablakkezelőhöz.
 %patch2 -p1
 
 %build
-cmake \
+%cmake \
 	-DLUA_INC_DIR=%{_includedir}/lua51 \
 	-DPREFIX=%{_prefix} \
 	-DAWESOME_DOC_PATH=%{_docdir}/%{name}-%{version} \
