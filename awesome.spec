@@ -51,8 +51,6 @@ Obsoletes:	awesome-plugin-awful
 Obsoletes:	awesome-plugin-beautiful
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_sysconfdir	/etc/X11
-
 %description
 awesome is a highly configurable, next generation framework window
 manager for X. It is very fast, light and extensible. It is primarly
@@ -273,9 +271,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files example-config
 %defattr(644,root,root,755)
-%dir %{_sysconfdir}/xdg
-%dir %{_sysconfdir}/xdg/awesome
-%{_sysconfdir}/xdg/awesome/*
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/xdg/awesome
 
 %files themes
 %defattr(644,root,root,755)
