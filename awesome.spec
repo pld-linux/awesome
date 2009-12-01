@@ -19,6 +19,7 @@ BuildRequires:	asciidoc
 BuildRequires:	cairo-devel
 BuildRequires:	cmake >= 2.6
 BuildRequires:	dbus-devel
+BuildRequires:	docbook-dtd45-xml
 BuildRequires:	doxygen
 BuildRequires:	glib-devel
 BuildRequires:	glib2-devel
@@ -35,6 +36,7 @@ BuildRequires:	readline-devel
 BuildRequires:	rpmbuild(macros) >= 1.293
 BuildRequires:	sed >= 4.0
 BuildRequires:	startup-notification-devel >= 0.10
+BuildRequires:	which
 BuildRequires:	xcb-util-devel >= 0.3.6
 BuildRequires:	xmlto
 BuildRequires:	xorg-lib-libICE-devel
@@ -205,7 +207,7 @@ Zenburn theme for awesome window manager.
 Zenburn téma az awesome ablakkezelőhöz.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
