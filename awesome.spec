@@ -4,7 +4,7 @@ Summary(hu.UTF-8):	awesome ablakkezelő
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
 Name:		awesome
 Version:	3.4.3
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Window Managers
 Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.bz2
@@ -159,7 +159,6 @@ Summary:	Themes for awesome window manager (metapackage)
 Summary(hu.UTF-8):	Témák az awesome ablakkezelőhöz (metacsomag)
 Summary(pl.UTF-8):	Tematy dla zarządcy okien awesome
 Group:		X11/Window Managers/Tools
-Requires:	%{name} = %{version}-%{release}
 Requires:	%{name}-themes-default = %{version}-%{release}
 Requires:	%{name}-themes-sky = %{version}-%{release}
 Requires:	%{name}-themes-zenburn = %{version}-%{release}
@@ -177,6 +176,7 @@ Dodatkowe "tematy" (definicje wyglądu) zarządcy okien awesome.
 Summary:	Default theme for awesome window manager
 Summary(hu.UTF-8):	Alapértelmezett téma az awesome ablakkezelőhöz
 Group:		X11/Window Managers/Tools
+Requires:	%{name} = %{version}-%{release}
 
 %description themes-default
 Default theme for awesome window manager.
@@ -188,6 +188,7 @@ Alapértelmezett téma az awesome ablakkezelőhöz.
 Summary:	Sky theme for awesome window manager
 Summary(hu.UTF-8):	Sky téma az awesome ablakkezelőhöz
 Group:		X11/Window Managers/Tools
+Requires:	%{name} = %{version}-%{release}
 
 %description themes-sky
 Sky theme for awesome window manager.
@@ -199,6 +200,7 @@ Sky téma az awesome ablakkezelőhöz.
 Summary:	Zenburn theme for awesome window manager
 Summary(hu.UTF-8):	Zenburn téma az awesome ablakkezelőhöz
 Group:		X11/Window Managers/Tools
+Requires:	%{name} = %{version}-%{release}
 
 %description themes-zenburn
 Zenburn theme for awesome window manager.
