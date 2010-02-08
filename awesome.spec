@@ -20,8 +20,6 @@ BuildRequires:	cairo-devel
 BuildRequires:	cmake >= 2.6
 BuildRequires:	dbus-devel
 BuildRequires:	docbook-dtd45-xml
-BuildRequires:	doxygen
-BuildRequires:	glib-devel
 BuildRequires:	glib2-devel
 BuildRequires:	gperf
 BuildRequires:	imlib2-devel
@@ -39,11 +37,7 @@ BuildRequires:	startup-notification-devel >= 0.10
 BuildRequires:	which
 BuildRequires:	xcb-util-devel >= 0.3.6
 BuildRequires:	xmlto
-BuildRequires:	xorg-lib-libICE-devel
 BuildRequires:	xorg-lib-libXext-devel
-BuildRequires:	xorg-lib-libXft-devel
-BuildRequires:	xorg-lib-libXinerama-devel
-BuildRequires:	xorg-lib-libXrandr-devel
 BuildRequires:	xorg-proto-xproto-devel >= 7.0.15
 Requires:	startup-notification >= 0.10
 Requires:	xcb-util >= 0.3.6
