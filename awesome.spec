@@ -3,12 +3,12 @@ Summary:	awesome window manager
 Summary(hu.UTF-8):	awesome ablakkezelő
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
 Name:		awesome
-Version:	3.4.3
-Release:	2
+Version:	3.4.4
+Release:	1
 License:	GPL v2
 Group:		X11/Window Managers
 Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.bz2
-# Source0-md5:	bd6c56a0b0e1cc4ce53b0c53d8b0c7c2
+# Source0-md5:	8c2537ad898d7f58a0f3ba92e6a561a1
 Source1:	%{name}-xsession.desktop
 Patch0:		%{name}-3.0-lua-files.patch
 Patch1:		%{name}-xmlto.patch
