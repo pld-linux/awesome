@@ -3,15 +3,15 @@ Summary:	awesome window manager
 Summary(hu.UTF-8):	awesome ablakkezelő
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
 Name:		awesome
-Version:	3.4.4
-Release:	2
+Version:	3.4.5
+Release:	1
 License:	GPL v2
 Group:		X11/Window Managers
-Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.bz2
-# Source0-md5:	8c2537ad898d7f58a0f3ba92e6a561a1
+Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.xz
+# Source0-md5:	6b3f97e9ff9da8798da6db3b53532db0
 Source1:	%{name}-xsession.desktop
 Patch0:		%{name}-3.0-lua-files.patch
-Patch1:		%{name}-xmlto.patch
+# Patch1:		%{name}-xmlto.patch
 Patch2:		%{name}-magnifier.patch
 URL:		http://awesome.naquadah.org/
 BuildRequires:	ImageMagick-coder-png
@@ -205,7 +205,7 @@ Zenburn téma az awesome ablakkezelőhöz.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
+# %patch1 -p1
 %patch2 -p1
 
 %build
@@ -230,6 +230,8 @@ for file in $(%{__find} $RPM_BUILD_ROOT%{_datadir}/%{name} -iname "*.in"); do
 	%{__rm} ${file}
 done
 
+%{__rm} $RPM_BUILD_ROOT%{_mandir}/*.txt
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -243,9 +245,22 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/%{name}/lib
 %{_datadir}/%{name}/icons
 %{_datadir}/xsessions/%{name}.desktop
+
 %{_mandir}/man1/%{name}.1*
 %{_mandir}/man1/awsetbg.1*
 %{_mandir}/man5/awesomerc.5*
+# de
+%lang(de) %{_mandir}/de/man1/awesome.1*
+%lang(de) %{_mandir}/de/man1/awsetbg.1*
+%lang(de) %{_mandir}/de/man5/awesomerc.5*
+# es
+%lang(es) %{_mandir}/es/man1/awesome.1*
+%lang(es) %{_mandir}/es/man1/awsetbg.1*
+%lang(es) %{_mandir}/es/man5/awesomerc.5*
+# fr
+%lang(fr) %{_mandir}/fr/man1/awesome.1*
+%lang(fr) %{_mandir}/fr/man1/awsetbg.1*
+%lang(fr) %{_mandir}/fr/man5/awesomerc.5*
 
 # plugin-awful
 %dir %{_datadir}/awesome/lib/awful
@@ -262,6 +277,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/%{name}-client
 %{_mandir}/man1/%{name}-client.1*
+%lang(de) %{_mandir}/de/man1/awesome-client.1*
+%lang(es) %{_mandir}/es/man1/awesome-client.1*
+%lang(fr) %{_mandir}/fr/man1/awesome-client.1*
 
 %files doc
 %defattr(644,root,root,755)
