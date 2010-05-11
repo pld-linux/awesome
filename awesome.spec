@@ -11,8 +11,7 @@ Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.xz
 # Source0-md5:	6b3f97e9ff9da8798da6db3b53532db0
 Source1:	%{name}-xsession.desktop
 Patch0:		%{name}-3.0-lua-files.patch
-# Patch1:		%{name}-xmlto.patch
-Patch2:		%{name}-magnifier.patch
+Patch1:		%{name}-magnifier.patch
 URL:		http://awesome.naquadah.org/
 BuildRequires:	ImageMagick-coder-png
 BuildRequires:	asciidoc
@@ -205,8 +204,7 @@ Zenburn téma az awesome ablakkezelőhöz.
 %prep
 %setup -q
 %patch0 -p1
-# %patch1 -p1
-%patch2 -p1
+%patch1 -p1
 
 %build
 %cmake \
