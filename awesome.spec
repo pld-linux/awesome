@@ -33,6 +33,7 @@ BuildRequires:	readline-devel
 BuildRequires:	rpmbuild(macros) >= 1.293
 BuildRequires:	sed >= 4.0
 BuildRequires:	startup-notification-devel >= 0.10
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	which
 BuildRequires:	xcb-util-devel >= 0.3.6
 BuildRequires:	xmlto
