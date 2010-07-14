@@ -3,12 +3,12 @@ Summary:	awesome window manager
 Summary(hu.UTF-8):	awesome ablakkezelő
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
 Name:		awesome
-Version:	3.4.5
+Version:	3.4.6
 Release:	1
 License:	GPL v2
 Group:		X11/Window Managers
 Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.xz
-# Source0-md5:	6b3f97e9ff9da8798da6db3b53532db0
+# Source0-md5:	45ce6790f52e888d72d696772c297047
 Source1:	%{name}-xsession.desktop
 Patch0:		%{name}-3.0-lua-files.patch
 Patch1:		%{name}-magnifier.patch
@@ -228,8 +228,6 @@ install %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/xsessions/%{name}.desktop
 for file in $(%{__find} $RPM_BUILD_ROOT%{_datadir}/%{name} -iname "*.in"); do
 	%{__rm} ${file}
 done
-
-%{__rm} $RPM_BUILD_ROOT%{_mandir}/*.txt
 
 %clean
 rm -rf $RPM_BUILD_ROOT
