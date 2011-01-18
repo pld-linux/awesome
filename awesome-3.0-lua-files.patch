@@ -1,14 +1,5 @@
---- awesome-3.0-orig/awesomeConfig.cmake	2008-09-18 20:15:03.000000000 +0200
-+++ awesome-3.0/awesomeConfig.cmake	2008-09-18 20:16:07.000000000 +0200
-@@ -18,7 +18,7 @@
- option(GENERATE_MANPAGES "generate manpages" ON)
- option(GENERATE_LUADOC "generate luadoc" ON)
- 
--link_directories(/usr/local/lib)
-+link_directories(/usr/lib)
- 
- # {{{ CFLAGS
- add_definitions(-std=gnu99 -ggdb3 -fno-strict-aliasing -Wall -Wextra
+--- awesome-3.4.9-orig/awesomeConfig.cmake	2011-01-18 15:13:13.827853477 +0100
++++ awesome-3.4.9/awesomeConfig.cmake	2011-01-18 15:13:52.071052305 +0100
 @@ -54,7 +54,7 @@
  a_find_program(XMLTO_EXECUTABLE xmlto FALSE)
  a_find_program(GZIP_EXECUTABLE gzip FALSE)
@@ -16,5 +7,5 @@
 -a_find_program(LUA_EXECUTABLE lua FALSE)
 +a_find_program(LUA_EXECUTABLE lua51 FALSE)
  a_find_program(LUADOC_EXECUTABLE luadoc FALSE)
- # doxygen
- include(FindDoxygen)
+ # theme graphics
+ a_find_program(CONVERT_EXECUTABLE convert TRUE)
