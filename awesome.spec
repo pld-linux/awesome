@@ -16,7 +16,7 @@ URL:		http://awesome.naquadah.org/
 BuildRequires:	ImageMagick-coder-png
 BuildRequires:	asciidoc
 BuildRequires:	cairo-devel
-BuildRequires:	cmake >= 2.6
+BuildRequires:	cmake >= 2.8.0
 BuildRequires:	dbus-devel
 BuildRequires:	docbook-dtd45-xml
 BuildRequires:	glib2-devel
@@ -27,9 +27,8 @@ BuildRequires:	libxcb-devel >= 1.4
 BuildRequires:	libxdg-basedir-devel >= 1.0.1
 BuildRequires:	lua-doc
 BuildRequires:	lua51-devel
-BuildRequires:	pango-devel
+BuildRequires:	pango-devel >= 1:1.19.3
 BuildRequires:	pkgconfig >= 0.9.0
-BuildRequires:	readline-devel
 BuildRequires:	rpmbuild(macros) >= 1.293
 BuildRequires:	sed >= 4.0
 BuildRequires:	startup-notification-devel >= 0.10
@@ -39,6 +38,7 @@ BuildRequires:	xcb-util-devel >= 0.3.6
 BuildRequires:	xmlto
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-proto-xproto-devel >= 7.0.15
+Requires:	pango >= 1:1.19.3
 Requires:	startup-notification >= 0.10
 Requires:	xcb-util >= 0.3.6
 Provides:	awesome-plugin-awful
