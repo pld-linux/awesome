@@ -209,6 +209,7 @@ Zenburn téma az awesome ablakkezelőhöz.
 
 %build
 %cmake \
+	-DCMAKE_CXX_COMPILER_WORKS=1 -DCMAKE_CXX_COMPILER="%{__cc}" \
 	-DLUA_INC_DIR=%{_includedir}/lua51 \
 	-DPREFIX=%{_prefix} \
 	-DAWESOME_DOC_PATH=%{_docdir}/%{name}-%{version} \
