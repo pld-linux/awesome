@@ -4,7 +4,7 @@ Summary(hu.UTF-8):	awesome ablakkezelő
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
 Name:		awesome
 Version:	3.4.9
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Window Managers
 Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.xz
@@ -22,7 +22,7 @@ BuildRequires:	docbook-dtd45-xml
 BuildRequires:	glib2-devel
 BuildRequires:	gperf
 BuildRequires:	imlib2-devel
-BuildRequires:	libev-devel
+BuildRequires:	libev-devel >= 4.0
 BuildRequires:	libxcb-devel >= 1.4
 BuildRequires:	libxdg-basedir-devel >= 1.0.1
 BuildRequires:	lua-doc
