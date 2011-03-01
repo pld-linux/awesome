@@ -12,6 +12,7 @@ Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.xz
 Source1:	%{name}-xsession.desktop
 Patch0:		%{name}-3.0-lua-files.patch
 Patch1:		%{name}-magnifier.patch
+Patch2:		normalize-icon-path-names.patch
 URL:		http://awesome.naquadah.org/
 BuildRequires:	ImageMagick-coder-png
 BuildRequires:	asciidoc
@@ -206,10 +207,10 @@ Zenburn téma az awesome ablakkezelőhöz.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 %cmake \
-	-DCMAKE_CXX_COMPILER_WORKS=1 -DCMAKE_CXX_COMPILER="%{__cc}" \
 	-DLUA_INC_DIR=%{_includedir}/lua51 \
 	-DPREFIX=%{_prefix} \
 	-DAWESOME_DOC_PATH=%{_docdir}/%{name}-%{version} \
