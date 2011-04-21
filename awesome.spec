@@ -46,6 +46,10 @@ Provides:	awesome-plugin-awful
 Provides:	awesome-plugin-beautiful
 Obsoletes:	awesome-plugin-awful
 Obsoletes:	awesome-plugin-beautiful
+Obsoletes:	awesome-plugin-invaders
+Obsoletes:	awesome-plugin-revelation
+Obsoletes:	awesome-plugin-tabulous
+Obsoletes:	awesome-plugin-telak
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -68,7 +72,7 @@ możliwościami konfiguracji i rozszerzania funkcjonalności, pozostając
 przy tym szybkim i lekkim. Cel ten został osiągnięty dzięki wbudowaniu
 w program języka skryptowego lua. Awesome został zaprojektowany z
 myślą o bardziej zaawansowanych użytkownikach: programistach oraz
-innych pracujących na codzień z komputerami, którzy chcą mieć dużą
+innych pracujących na co dzień z komputerami, którzy chcą mieć dużą
 kontrolę nad swoim środowiskiem graficznym.
 
 %package client
@@ -152,7 +156,7 @@ powiadomienia w formie wyskakujących okienek.
 %package themes
 Summary:	Themes for awesome window manager (metapackage)
 Summary(hu.UTF-8):	Témák az awesome ablakkezelőhöz (metacsomag)
-Summary(pl.UTF-8):	Tematy dla zarządcy okien awesome
+Summary(pl.UTF-8):	Motywy dla zarządcy okien awesome
 Group:		X11/Window Managers/Tools
 Requires:	%{name}-themes-default = %{version}-%{release}
 Requires:	%{name}-themes-sky = %{version}-%{release}
@@ -165,11 +169,12 @@ Themes for awesome window manager (metapackage).
 Témák az awesome ablakkezelőhöz (metacsomag).
 
 %description themes -l pl.UTF-8
-Dodatkowe "tematy" (definicje wyglądu) zarządcy okien awesome.
+Dodatkowe motywy (definicje wyglądu) zarządcy okien awesome.
 
 %package themes-default
 Summary:	Default theme for awesome window manager
 Summary(hu.UTF-8):	Alapértelmezett téma az awesome ablakkezelőhöz
+Summary(pl.UTF-8):	Domyślny motyw dla zarządcy okien awesome
 Group:		X11/Window Managers/Tools
 Requires:	%{name} = %{version}-%{release}
 
@@ -179,9 +184,13 @@ Default theme for awesome window manager.
 %description themes-default -l hu.UTF-8
 Alapértelmezett téma az awesome ablakkezelőhöz.
 
+%description themes-default -l pl.UTF-8
+Domyślny motyw dla zarządcy okien awesome.
+
 %package themes-sky
 Summary:	Sky theme for awesome window manager
 Summary(hu.UTF-8):	Sky téma az awesome ablakkezelőhöz
+Summary(pl.UTF-8):	Motyw Sky dla zarządcy okien awesome
 Group:		X11/Window Managers/Tools
 Requires:	%{name} = %{version}-%{release}
 
@@ -191,9 +200,13 @@ Sky theme for awesome window manager.
 %description themes-sky -l hu.UTF-8
 Sky téma az awesome ablakkezelőhöz.
 
+%description themes-sky -l pl.UTF-8
+Motyw Sky dla zarządcy okien awesome.
+
 %package themes-zenburn
 Summary:	Zenburn theme for awesome window manager
 Summary(hu.UTF-8):	Zenburn téma az awesome ablakkezelőhöz
+Summary(pl.UTF-8):	Motyw Zenburn dla zarządcy okien awesome
 Group:		X11/Window Managers/Tools
 Requires:	%{name} = %{version}-%{release}
 
@@ -202,6 +215,9 @@ Zenburn theme for awesome window manager.
 
 %description themes-zenburn -l hu.UTF-8
 Zenburn téma az awesome ablakkezelőhöz.
+
+%description themes-zenburn -l pl.UTF-8
+Motyw Zenburn dla zarządcy okien awesome.
 
 %prep
 %setup -q
