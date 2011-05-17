@@ -3,12 +3,12 @@ Summary:	awesome window manager
 Summary(hu.UTF-8):	awesome ablakkezelő
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
 Name:		awesome
-Version:	3.4.9
-Release:	3
+Version:	3.4.10
+Release:	1
 License:	GPL v2
 Group:		X11/Window Managers
 Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.xz
-# Source0-md5:	9a644535db9bcdf7e66b278c15d67a4a
+# Source0-md5:	b91c4d9392d3c3385e6074f4347044e2
 Source1:	%{name}-xsession.desktop
 Patch0:		%{name}-3.0-lua-files.patch
 Patch1:		%{name}-magnifier.patch
@@ -223,7 +223,7 @@ Motyw Zenburn dla zarządcy okien awesome.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
+# %patch2 -p1
 
 %build
 %cmake \
