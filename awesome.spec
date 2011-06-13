@@ -4,7 +4,7 @@ Summary(hu.UTF-8):	awesome ablakkezelő
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
 Name:		awesome
 Version:	3.4.10
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		X11/Window Managers
 Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.xz
@@ -13,6 +13,7 @@ Source1:	%{name}-xsession.desktop
 Patch0:		%{name}-3.0-lua-files.patch
 Patch1:		%{name}-magnifier.patch
 Patch2:		normalize-icon-path-names.patch
+Patch3:		xcb-util.patch
 URL:		http://awesome.naquadah.org/
 BuildRequires:	ImageMagick-coder-png
 BuildRequires:	asciidoc
@@ -24,7 +25,6 @@ BuildRequires:	glib2-devel
 BuildRequires:	gperf
 BuildRequires:	imlib2-devel
 BuildRequires:	libev-devel >= 4.0
-BuildRequires:	libxcb-devel >= 1.4
 BuildRequires:	libxdg-basedir-devel >= 1.0.1
 BuildRequires:	lua-doc
 BuildRequires:	lua51-devel
@@ -35,7 +35,9 @@ BuildRequires:	sed >= 4.0
 BuildRequires:	startup-notification-devel >= 0.10
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	which
-BuildRequires:	xcb-util-devel >= 0.3.6
+BuildRequires:	xcb-util-image-devel >= 0.3.8
+BuildRequires:	xcb-util-keysyms-devel >= 0.3.8
+BuildRequires:	xcb-util-wm-devel >= 0.3.8
 BuildRequires:	xmlto
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-proto-xproto-devel >= 7.0.15
@@ -224,6 +226,7 @@ Motyw Zenburn dla zarządcy okien awesome.
 %patch0 -p1
 %patch1 -p1
 # %patch2 -p1
+%patch3 -p1
 
 %build
 %cmake \
