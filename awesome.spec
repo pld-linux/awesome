@@ -3,12 +3,12 @@ Summary:	awesome window manager
 Summary(hu.UTF-8):	awesome ablakkezelő
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
 Name:		awesome
-Version:	3.4.10
-Release:	3
+Version:	3.4.11
+Release:	1
 License:	GPL v2
 Group:		X11/Window Managers
 Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.xz
-# Source0-md5:	b91c4d9392d3c3385e6074f4347044e2
+# Source0-md5:	d6aa71334b5cd4ef63ce69d6c612ecf2
 Source1:	%{name}-xsession.desktop
 Patch0:		%{name}-3.0-lua-files.patch
 Patch1:		%{name}-magnifier.patch
@@ -226,7 +226,7 @@ Motyw Zenburn dla zarządcy okien awesome.
 %patch0 -p1
 %patch1 -p1
 # %patch2 -p1
-%patch3 -p1
+# %patch3 -p1
 
 %build
 %cmake \
@@ -279,6 +279,10 @@ rm -rf $RPM_BUILD_ROOT
 %lang(fr) %{_mandir}/fr/man1/awesome.1*
 %lang(fr) %{_mandir}/fr/man1/awsetbg.1*
 %lang(fr) %{_mandir}/fr/man5/awesomerc.5*
+# ru
+%lang(ru) %{_mandir}/ru/man1/awesome.1*
+%lang(ru) %{_mandir}/ru/man1/awsetbg.1*
+%lang(ru) %{_mandir}/ru/man5/awesomerc.5*
 
 # plugin-awful
 %dir %{_datadir}/awesome/lib/awful
@@ -298,6 +302,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(de) %{_mandir}/de/man1/awesome-client.1*
 %lang(es) %{_mandir}/es/man1/awesome-client.1*
 %lang(fr) %{_mandir}/fr/man1/awesome-client.1*
+%lang(ru) %{_mandir}/ru/man1/awesome-client.1*
 
 %files doc
 %defattr(644,root,root,755)
