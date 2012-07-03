@@ -3,12 +3,12 @@ Summary:	awesome window manager
 Summary(hu.UTF-8):	awesome ablakkezelő
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
 Name:		awesome
-Version:	3.4.11
+Version:	3.4.12
 Release:	1
 License:	GPL v2
 Group:		X11/Window Managers
 Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.xz
-# Source0-md5:	d6aa71334b5cd4ef63ce69d6c612ecf2
+# Source0-md5:	2c3490b820a19c044290027e6f2eb6c8
 Source1:	%{name}-xsession.desktop
 Patch0:		%{name}-3.0-lua-files.patch
 Patch1:		%{name}-magnifier.patch
@@ -279,6 +279,10 @@ rm -rf $RPM_BUILD_ROOT
 %lang(fr) %{_mandir}/fr/man1/awesome.1*
 %lang(fr) %{_mandir}/fr/man1/awsetbg.1*
 %lang(fr) %{_mandir}/fr/man5/awesomerc.5*
+# it
+%lang(it) %{_mandir}/it/man1/awesome.1*
+%lang(it) %{_mandir}/it/man1/awsetbg.1*
+%lang(it) %{_mandir}/it/man5/awesomerc.5*
 # ru
 %lang(ru) %{_mandir}/ru/man1/awesome.1*
 %lang(ru) %{_mandir}/ru/man1/awsetbg.1*
@@ -302,6 +306,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(de) %{_mandir}/de/man1/awesome-client.1*
 %lang(es) %{_mandir}/es/man1/awesome-client.1*
 %lang(fr) %{_mandir}/fr/man1/awesome-client.1*
+%lang(it) %{_mandir}/it/man1/awesome-client.1*
 %lang(ru) %{_mandir}/ru/man1/awesome-client.1*
 
 %files doc
