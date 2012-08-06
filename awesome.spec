@@ -4,12 +4,14 @@ Summary(hu.UTF-8):	awesome ablakkezelő
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
 Name:		awesome
 Version:	3.4.12
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Window Managers
 Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.xz
 # Source0-md5:	2c3490b820a19c044290027e6f2eb6c8
 Source1:	%{name}-xsession.desktop
+Source2:	http://gitorious.org/bashets/bashets/blobs/raw/master/bashets.lua
+# Source2-md5:	fead95b357bc800773c6a506c126ba72
 Patch0:		%{name}-3.0-lua-files.patch
 Patch1:		%{name}-magnifier.patch
 Patch2:		normalize-icon-path-names.patch
@@ -155,6 +157,17 @@ awesome3-ban.
 Biblioteka lua dla zarządcy okien awesome 3 implementująca
 powiadomienia w formie wyskakujących okienek.
 
+%package plugin-bashets
+Summary:	Bashets is a widget library that displays data from scripts
+Group:		X11/Window Managers/Tools
+Requires:	%{name} = %{version}-%{release}
+
+%description plugin-bashets
+Bashets is a user widget library powered by shell scripts. Bashets is
+glue code which empowers you to fetch data somewhere, and put it
+somewhere. It is a distinct approach from Obvious or Vicious, which
+try to implement and package predefined widgets themselves.
+
 %package themes
 Summary:	Themes for awesome window manager (metapackage)
 Summary(hu.UTF-8):	Témák az awesome ablakkezelőhöz (metacsomag)
@@ -245,6 +258,7 @@ install AUTHORS BUGS README STYLE $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 install %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/xsessions/%{name}.desktop
+install %{SOURCE2} $RPM_BUILD_ROOT%{_datadir}/awesome/lib/bashets.lua
 
 for file in $(%{__find} $RPM_BUILD_ROOT%{_datadir}/%{name} -iname "*.in"); do
 	%{__rm} ${file}
@@ -335,3 +349,7 @@ rm -rf $RPM_BUILD_ROOT
 %files plugin-naughty
 %defattr(644,root,root,755)
 %{_datadir}/awesome/lib/naughty.lua
+
+%files plugin-bashets
+%defattr(644,root,root,755)
+%{_datadir}/awesome/lib/bashets.lua
