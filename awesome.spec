@@ -4,7 +4,7 @@ Summary(hu.UTF-8):	awesome ablakkezelő
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
 Name:		awesome
 Version:	3.4.12
-Release:	5
+Release:	6
 License:	GPL v2
 Group:		X11/Window Managers
 Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.xz
@@ -14,6 +14,7 @@ Patch0:		%{name}-3.0-lua-files.patch
 Patch1:		%{name}-magnifier.patch
 Patch2:		normalize-icon-path-names.patch
 Patch3:		xcb-util.patch
+Patch4:		%{name}-gcc15.patch
 URL:		http://awesome.naquadah.org/
 BuildRequires:	ImageMagick-coder-png
 BuildRequires:	asciidoc
@@ -227,6 +228,7 @@ Motyw Zenburn dla zarządcy okien awesome.
 %patch -P1 -p1
 # %%patch2 -p1
 # %%patch3 -p1
+%patch -P4 -p1
 
 %build
 %cmake \
@@ -299,6 +301,10 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/awesome/themes
 %{_datadir}/awesome/lib/beautiful.lua
 
+%files doc
+%defattr(644,root,root,755)
+%doc %{_docdir}/%{name}-%{version}/luadoc
+
 %files client
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/%{name}-client
@@ -308,10 +314,6 @@ rm -rf $RPM_BUILD_ROOT
 %lang(fr) %{_mandir}/fr/man1/awesome-client.1*
 %lang(it) %{_mandir}/it/man1/awesome-client.1*
 %lang(ru) %{_mandir}/ru/man1/awesome-client.1*
-
-%files doc
-%defattr(644,root,root,755)
-%doc %{_docdir}/%{name}-%{version}/luadoc
 
 %files example-config
 %defattr(644,root,root,755)
