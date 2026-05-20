@@ -3,53 +3,54 @@ Summary:	awesome window manager
 Summary(hu.UTF-8):	awesome ablakkezelő
 Summary(pl.UTF-8):	Zarządca okien X - Awesome
 Name:		awesome
-Version:	3.4.12
-Release:	6
+Version:	4.3
+Release:	1
 License:	GPL v2
 Group:		X11/Window Managers
-Source0:	http://awesome.naquadah.org/download/%{name}-%{version}.tar.xz
-# Source0-md5:	2c3490b820a19c044290027e6f2eb6c8
+Source0:	https://github.com/awesomeWM/awesome/releases/download/v%{version}/%{name}-%{version}.tar.xz
+# Source0-md5:	4d75cce54a86b6bbaa6e88a926cab5a7
 Source1:	%{name}-xsession.desktop
-Patch0:		%{name}-3.0-lua-files.patch
-Patch1:		%{name}-magnifier.patch
-Patch2:		normalize-icon-path-names.patch
-Patch3:		xcb-util.patch
-Patch4:		%{name}-gcc15.patch
-URL:		http://awesome.naquadah.org/
-BuildRequires:	ImageMagick-coder-png
-BuildRequires:	asciidoc
+Patch0:		%{name}-lua51-docgen.patch
+Patch1:		%{name}-fno-common.patch
+URL:		https://awesomewm.org/
+BuildRequires:	ImageMagick
 BuildRequires:	cairo-devel
-BuildRequires:	cmake >= 2.8.0
+BuildRequires:	cmake >= 3.0.0
 BuildRequires:	dbus-devel
-BuildRequires:	docbook-dtd45-xml
-BuildRequires:	glib2-devel
-BuildRequires:	gperf
-BuildRequires:	imlib2-devel
-BuildRequires:	libev-devel >= 4.0
-BuildRequires:	libxdg-basedir-devel >= 1.0.1
-BuildRequires:	lua-doc
-BuildRequires:	lua51-devel
-BuildRequires:	pango-devel >= 1:1.19.3
+BuildRequires:	gdk-pixbuf2-devel
+BuildRequires:	glib2-devel >= 2.40
+BuildRequires:	gobject-introspection-devel
+BuildRequires:	ldoc
+BuildRequires:	libxdg-basedir-devel >= 1.0.0
+BuildRequires:	lua-lgi >= 0.8.0
+BuildRequires:	lua51-devel >= 5.1
+BuildRequires:	pango-devel
 BuildRequires:	pkgconfig >= 0.9.0
 BuildRequires:	rpmbuild(macros) >= 1.293
-BuildRequires:	sed >= 4.0
+BuildRequires:	ruby-asciidoctor
 BuildRequires:	startup-notification-devel >= 0.10
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	which
-BuildRequires:	xcb-util-image-devel >= 0.3.8
-BuildRequires:	xcb-util-keysyms-devel >= 0.3.8
+BuildRequires:	xcb-util-cursor-devel
+BuildRequires:	xcb-util-devel >= 0.3.8
+BuildRequires:	xcb-util-keysyms-devel >= 0.3.4
 BuildRequires:	xcb-util-wm-devel >= 0.3.8
-BuildRequires:	xmlto
-BuildRequires:	xorg-lib-libXext-devel
+BuildRequires:	xcb-util-xrm-devel >= 1.0
+BuildRequires:	xorg-lib-libxkbcommon-devel
+BuildRequires:	xorg-lib-libxkbcommon-x11-devel
 BuildRequires:	xorg-proto-xproto-devel >= 7.0.15
-Requires:	pango >= 1:1.19.3
+Requires:	dbus
+Requires:	lua-lgi >= 0.8.0
+Requires:	pango
 Requires:	startup-notification >= 0.10
-Requires:	xcb-util >= 0.3.6
 Provides:	awesome-plugin-awful
 Provides:	awesome-plugin-beautiful
+Provides:	awesome-plugin-naughty
+Obsoletes:	awesome-doc < 4
 Obsoletes:	awesome-plugin-awful
 Obsoletes:	awesome-plugin-beautiful
 Obsoletes:	awesome-plugin-invaders
+Obsoletes:	awesome-plugin-naughty < 4
 Obsoletes:	awesome-plugin-revelation
 Obsoletes:	awesome-plugin-tabulous
 Obsoletes:	awesome-plugin-telak
@@ -84,7 +85,6 @@ Summary(hu.UTF-8):	Parancssoros kliens az awesome ablakkezelőhöz
 Summary(pl.UTF-8):	Klient zarządcy okien awesome
 Group:		X11/Window Managers/Tools
 Requires:	dbus
-Requires:	rlwrap
 
 %description client
 awesome-client is command line utility (in fact shell script) for
@@ -102,7 +102,7 @@ działającej instancji zarządcy okien awesome.
 %package doc
 Summary:	awesome window manager API documentation
 Summary(hu.UTF-8):	awesome ablakkezelő API dokumentációja
-Summary(pl.UTF-8):	Dokumentacja API awesome
+Summary(pl.UTF-8):	Dokumentacja API zarządcy okien awesome
 Group:		Documentation
 
 %description doc
@@ -136,33 +136,15 @@ Przykładowy plik konfiguracyjny dla zarządcy okien awesome. Ten plik
 jest dobrym punktem wyjścia dla osób nie używających wcześniej awesome
 3.x.
 
-%package plugin-naughty
-Summary:	Naughty is a lua library that implements popup notifications for awesome 3
-Summary(hu.UTF-8):	Naughty egy lua-könyvtár, amely felugró értesítéseket tesz lehetővé awesome3-ban
-Summary(pl.UTF-8):	Powiadomienia w postaci wyskakujących okienek dla awesome 3
-Group:		X11/Window Managers/Tools
-Requires:	%{name} = %{version}-%{release}
-Provides:	dbus(org.freedesktop.Notifications)
-
-%description plugin-naughty
-Naughty is a lua library that implements popup notifications for
-awesome3.
-
-%description plugin-naughty -l hu.UTF-8
-Naughty egy lua-könyvtár, amely felugró értesítéseket tesz lehetővé
-awesome3-ban.
-
-%description plugin-naughty -l pl.UTF-8
-Biblioteka lua dla zarządcy okien awesome 3 implementująca
-powiadomienia w formie wyskakujących okienek.
-
 %package themes
 Summary:	Themes for awesome window manager (metapackage)
 Summary(hu.UTF-8):	Témák az awesome ablakkezelőhöz (metacsomag)
 Summary(pl.UTF-8):	Motywy dla zarządcy okien awesome
 Group:		X11/Window Managers/Tools
 Requires:	%{name}-themes-default = %{version}-%{release}
+Requires:	%{name}-themes-gtk = %{version}-%{release}
 Requires:	%{name}-themes-sky = %{version}-%{release}
+Requires:	%{name}-themes-xresources = %{version}-%{release}
 Requires:	%{name}-themes-zenburn = %{version}-%{release}
 
 %description themes
@@ -190,6 +172,18 @@ Alapértelmezett téma az awesome ablakkezelőhöz.
 %description themes-default -l pl.UTF-8
 Domyślny motyw dla zarządcy okien awesome.
 
+%package themes-gtk
+Summary:	GTK theme for awesome window manager
+Summary(pl.UTF-8):	Motyw GTK dla zarządcy okien awesome
+Group:		X11/Window Managers/Tools
+Requires:	%{name} = %{version}-%{release}
+
+%description themes-gtk
+GTK theme for awesome window manager.
+
+%description themes-gtk -l pl.UTF-8
+Motyw GTK dla zarządcy okien awesome.
+
 %package themes-sky
 Summary:	Sky theme for awesome window manager
 Summary(hu.UTF-8):	Sky téma az awesome ablakkezelőhöz
@@ -205,6 +199,18 @@ Sky téma az awesome ablakkezelőhöz.
 
 %description themes-sky -l pl.UTF-8
 Motyw Sky dla zarządcy okien awesome.
+
+%package themes-xresources
+Summary:	Xresources theme for awesome window manager
+Summary(pl.UTF-8):	Motyw Xresources dla zarządcy okien awesome
+Group:		X11/Window Managers/Tools
+Requires:	%{name} = %{version}-%{release}
+
+%description themes-xresources
+Xresources theme for awesome window manager.
+
+%description themes-xresources -l pl.UTF-8
+Motyw Xresources dla zarządcy okien awesome.
 
 %package themes-zenburn
 Summary:	Zenburn theme for awesome window manager
@@ -226,31 +232,26 @@ Motyw Zenburn dla zarządcy okien awesome.
 %setup -q
 %patch -P0 -p1
 %patch -P1 -p1
-# %%patch2 -p1
-# %%patch3 -p1
-%patch -P4 -p1
 
 %build
-%cmake \
-	-DLUA_INC_DIR=%{_includedir}/lua51 \
-	-DPREFIX=%{_prefix} \
+%cmake -B build \
+	-DLUA_INCLUDE_DIR=%{_includedir}/lua5.1 \
+	-DLUA_LIBRARY=%{_libdir}/liblua51.so \
 	-DAWESOME_DOC_PATH=%{_docdir}/%{name}-%{version} \
 	-DAWESOME_DATA_PATH=%{_datadir}/%{name} \
 	-DSYSCONFDIR=%{_sysconfdir}
-%{__make}
+%{__make} -C build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_datadir}/xsessions,%{_docdir}/%{name}-%{version}}
-install AUTHORS BUGS README STYLE $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
+cp -p LICENSE docs/01-readme.md $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}/
 
-%{__make} install \
+%{__make} -C build install \
 	DESTDIR=$RPM_BUILD_ROOT
-install %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/xsessions/%{name}.desktop
+cp -p %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/xsessions/%{name}.desktop
 
-for file in $(%{__find} $RPM_BUILD_ROOT%{_datadir}/%{name} -iname "*.in"); do
-	%{__rm} ${file}
-done
+%{__sed} -i -e '1s,^#!.*env bash$,#!/bin/bash,' $RPM_BUILD_ROOT%{_bindir}/awesome-client
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -258,52 +259,36 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc %{_docdir}/%{name}-%{version}
-%exclude %{_docdir}/%{name}-%{version}/luadoc
+%exclude %{_docdir}/%{name}-%{version}/doc
 %attr(755,root,root) %{_bindir}/%{name}
-%attr(755,root,root) %{_bindir}/awsetbg
 %dir %{_datadir}/%{name}
 %dir %{_datadir}/%{name}/lib
 %{_datadir}/%{name}/icons
 %{_datadir}/xsessions/%{name}.desktop
 
 %{_mandir}/man1/%{name}.1*
-%{_mandir}/man1/awsetbg.1*
 %{_mandir}/man5/awesomerc.5*
-# de
 %lang(de) %{_mandir}/de/man1/awesome.1*
-%lang(de) %{_mandir}/de/man1/awsetbg.1*
 %lang(de) %{_mandir}/de/man5/awesomerc.5*
-# es
 %lang(es) %{_mandir}/es/man1/awesome.1*
-%lang(es) %{_mandir}/es/man1/awsetbg.1*
 %lang(es) %{_mandir}/es/man5/awesomerc.5*
-# fr
 %lang(fr) %{_mandir}/fr/man1/awesome.1*
-%lang(fr) %{_mandir}/fr/man1/awsetbg.1*
 %lang(fr) %{_mandir}/fr/man5/awesomerc.5*
-# it
 %lang(it) %{_mandir}/it/man1/awesome.1*
-%lang(it) %{_mandir}/it/man1/awsetbg.1*
 %lang(it) %{_mandir}/it/man5/awesomerc.5*
-# ru
 %lang(ru) %{_mandir}/ru/man1/awesome.1*
-%lang(ru) %{_mandir}/ru/man1/awsetbg.1*
 %lang(ru) %{_mandir}/ru/man5/awesomerc.5*
 
-# plugin-awful
-%dir %{_datadir}/awesome/lib/awful
-%{_datadir}/awesome/lib/awful/*.lua
-%{_datadir}/awesome/lib/awful/layout
-%{_datadir}/awesome/lib/awful/mouse
-%{_datadir}/awesome/lib/awful/widget
-
-# plugin-beautiful
-%dir %{_datadir}/awesome/themes
-%{_datadir}/awesome/lib/beautiful.lua
-
-%files doc
-%defattr(644,root,root,755)
-%doc %{_docdir}/%{name}-%{version}/luadoc
+# library modules
+%dir %{_datadir}/%{name}/themes
+%{_datadir}/%{name}/lib/awful
+%{_datadir}/%{name}/lib/beautiful
+%{_datadir}/%{name}/lib/beautiful.lua
+%{_datadir}/%{name}/lib/gears
+%{_datadir}/%{name}/lib/menubar
+%{_datadir}/%{name}/lib/naughty
+%{_datadir}/%{name}/lib/naughty.lua
+%{_datadir}/%{name}/lib/wibox
 
 %files client
 %defattr(644,root,root,755)
@@ -314,6 +299,10 @@ rm -rf $RPM_BUILD_ROOT
 %lang(fr) %{_mandir}/fr/man1/awesome-client.1*
 %lang(it) %{_mandir}/it/man1/awesome-client.1*
 %lang(ru) %{_mandir}/ru/man1/awesome-client.1*
+
+%files doc
+%defattr(644,root,root,755)
+%doc %{_docdir}/%{name}-%{version}/doc
 
 %files example-config
 %defattr(644,root,root,755)
@@ -326,14 +315,18 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_datadir}/awesome/themes/default
 
+%files themes-gtk
+%defattr(644,root,root,755)
+%{_datadir}/awesome/themes/gtk
+
 %files themes-sky
 %defattr(644,root,root,755)
 %{_datadir}/awesome/themes/sky
 
+%files themes-xresources
+%defattr(644,root,root,755)
+%{_datadir}/awesome/themes/xresources
+
 %files themes-zenburn
 %defattr(644,root,root,755)
 %{_datadir}/awesome/themes/zenburn
-
-%files plugin-naughty
-%defattr(644,root,root,755)
-%{_datadir}/awesome/lib/naughty.lua
